@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C9CD1BEE21A1CFF000203AA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1BED21A1CFF000203AA5 /* AppDelegate.swift */; };
+		C9CD1BF021A1CFF000203AA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1BEF21A1CFF000203AA5 /* ViewController.swift */; };
+		C9CD1BF321A1CFF000203AA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD1BF121A1CFF000203AA5 /* Main.storyboard */; };
+		C9CD1BF621A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1BF421A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld */; };
+		C9CD1BF821A1CFF300203AA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CD1BF721A1CFF300203AA5 /* Assets.xcassets */; };
+		C9CD1BFB21A1CFF300203AA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD1BF921A1CFF300203AA5 /* LaunchScreen.storyboard */; };
+		C9CD1C0621A1CFF300203AA5 /* OceanAccessHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C0521A1CFF300203AA5 /* OceanAccessHelperTests.swift */; };
+		C9CD1C1121A1CFF300203AA5 /* OceanAccessHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C1021A1CFF300203AA5 /* OceanAccessHelperUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C9CD1C0221A1CFF300203AA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9CD1BE221A1CFF000203AA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9CD1BE921A1CFF000203AA5;
+			remoteInfo = OceanAccessHelper;
+		};
+		C9CD1C0D21A1CFF300203AA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9CD1BE221A1CFF000203AA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9CD1BE921A1CFF000203AA5;
+			remoteInfo = OceanAccessHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C9CD1BEA21A1CFF000203AA5 /* OceanAccessHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OceanAccessHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9CD1BED21A1CFF000203AA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C9CD1BEF21A1CFF000203AA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C9CD1BF221A1CFF000203AA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C9CD1BF521A1CFF000203AA5 /* OceanAccessHelper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OceanAccessHelper.xcdatamodel; sourceTree = "<group>"; };
+		C9CD1BF721A1CFF300203AA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9CD1BFA21A1CFF300203AA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C9CD1BFC21A1CFF300203AA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9CD1C0121A1CFF300203AA5 /* OceanAccessHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OceanAccessHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9CD1C0521A1CFF300203AA5 /* OceanAccessHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanAccessHelperTests.swift; sourceTree = "<group>"; };
+		C9CD1C0721A1CFF300203AA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9CD1C0C21A1CFF300203AA5 /* OceanAccessHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OceanAccessHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9CD1C1021A1CFF300203AA5 /* OceanAccessHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanAccessHelperUITests.swift; sourceTree = "<group>"; };
+		C9CD1C1221A1CFF300203AA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9CD1BE721A1CFF000203AA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9CD1BFE21A1CFF300203AA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9CD1C0921A1CFF300203AA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9CD1BE121A1CFF000203AA5 = {
+			isa = PBXGroup;
+			children = (
+				C9CD1BEC21A1CFF000203AA5 /* OceanAccessHelper */,
+				C9CD1C0421A1CFF300203AA5 /* OceanAccessHelperTests */,
+				C9CD1C0F21A1CFF300203AA5 /* OceanAccessHelperUITests */,
+				C9CD1BEB21A1CFF000203AA5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9CD1BEB21A1CFF000203AA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9CD1BEA21A1CFF000203AA5 /* OceanAccessHelper.app */,
+				C9CD1C0121A1CFF300203AA5 /* OceanAccessHelperTests.xctest */,
+				C9CD1C0C21A1CFF300203AA5 /* OceanAccessHelperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9CD1BEC21A1CFF000203AA5 /* OceanAccessHelper */ = {
+			isa = PBXGroup;
+			children = (
+				C9CD1BED21A1CFF000203AA5 /* AppDelegate.swift */,
+				C9CD1BEF21A1CFF000203AA5 /* ViewController.swift */,
+				C9CD1BF121A1CFF000203AA5 /* Main.storyboard */,
+				C9CD1BF721A1CFF300203AA5 /* Assets.xcassets */,
+				C9CD1BF921A1CFF300203AA5 /* LaunchScreen.storyboard */,
+				C9CD1BFC21A1CFF300203AA5 /* Info.plist */,
+				C9CD1BF421A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld */,
+			);
+			path = OceanAccessHelper;
+			sourceTree = "<group>";
+		};
+		C9CD1C0421A1CFF300203AA5 /* OceanAccessHelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				C9CD1C0521A1CFF300203AA5 /* OceanAccessHelperTests.swift */,
+				C9CD1C0721A1CFF300203AA5 /* Info.plist */,
+			);
+			path = OceanAccessHelperTests;
+			sourceTree = "<group>";
+		};
+		C9CD1C0F21A1CFF300203AA5 /* OceanAccessHelperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C9CD1C1021A1CFF300203AA5 /* OceanAccessHelperUITests.swift */,
+				C9CD1C1221A1CFF300203AA5 /* Info.plist */,
+			);
+			path = OceanAccessHelperUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9CD1BE921A1CFF000203AA5 /* OceanAccessHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9CD1C1521A1CFF300203AA5 /* Build configuration list for PBXNativeTarget "OceanAccessHelper" */;
+			buildPhases = (
+				C9CD1BE621A1CFF000203AA5 /* Sources */,
+				C9CD1BE721A1CFF000203AA5 /* Frameworks */,
+				C9CD1BE821A1CFF000203AA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OceanAccessHelper;
+			productName = OceanAccessHelper;
+			productReference = C9CD1BEA21A1CFF000203AA5 /* OceanAccessHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C9CD1C0021A1CFF300203AA5 /* OceanAccessHelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9CD1C1821A1CFF300203AA5 /* Build configuration list for PBXNativeTarget "OceanAccessHelperTests" */;
+			buildPhases = (
+				C9CD1BFD21A1CFF300203AA5 /* Sources */,
+				C9CD1BFE21A1CFF300203AA5 /* Frameworks */,
+				C9CD1BFF21A1CFF300203AA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9CD1C0321A1CFF300203AA5 /* PBXTargetDependency */,
+			);
+			name = OceanAccessHelperTests;
+			productName = OceanAccessHelperTests;
+			productReference = C9CD1C0121A1CFF300203AA5 /* OceanAccessHelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C9CD1C0B21A1CFF300203AA5 /* OceanAccessHelperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9CD1C1B21A1CFF300203AA5 /* Build configuration list for PBXNativeTarget "OceanAccessHelperUITests" */;
+			buildPhases = (
+				C9CD1C0821A1CFF300203AA5 /* Sources */,
+				C9CD1C0921A1CFF300203AA5 /* Frameworks */,
+				C9CD1C0A21A1CFF300203AA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9CD1C0E21A1CFF300203AA5 /* PBXTargetDependency */,
+			);
+			name = OceanAccessHelperUITests;
+			productName = OceanAccessHelperUITests;
+			productReference = C9CD1C0C21A1CFF300203AA5 /* OceanAccessHelperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9CD1BE221A1CFF000203AA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Robert Corlett";
+				TargetAttributes = {
+					C9CD1BE921A1CFF000203AA5 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					C9CD1C0021A1CFF300203AA5 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = C9CD1BE921A1CFF000203AA5;
+					};
+					C9CD1C0B21A1CFF300203AA5 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = C9CD1BE921A1CFF000203AA5;
+					};
+				};
+			};
+			buildConfigurationList = C9CD1BE521A1CFF000203AA5 /* Build configuration list for PBXProject "OceanAccessHelper" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9CD1BE121A1CFF000203AA5;
+			productRefGroup = C9CD1BEB21A1CFF000203AA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9CD1BE921A1CFF000203AA5 /* OceanAccessHelper */,
+				C9CD1C0021A1CFF300203AA5 /* OceanAccessHelperTests */,
+				C9CD1C0B21A1CFF300203AA5 /* OceanAccessHelperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9CD1BE821A1CFF000203AA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9CD1BFB21A1CFF300203AA5 /* LaunchScreen.storyboard in Resources */,
+				C9CD1BF821A1CFF300203AA5 /* Assets.xcassets in Resources */,
+				C9CD1BF321A1CFF000203AA5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9CD1BFF21A1CFF300203AA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9CD1C0A21A1CFF300203AA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9CD1BE621A1CFF000203AA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9CD1BF621A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld in Sources */,
+				C9CD1BF021A1CFF000203AA5 /* ViewController.swift in Sources */,
+				C9CD1BEE21A1CFF000203AA5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9CD1BFD21A1CFF300203AA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9CD1C0621A1CFF300203AA5 /* OceanAccessHelperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9CD1C0821A1CFF300203AA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9CD1C1121A1CFF300203AA5 /* OceanAccessHelperUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9CD1C0321A1CFF300203AA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9CD1BE921A1CFF000203AA5 /* OceanAccessHelper */;
+			targetProxy = C9CD1C0221A1CFF300203AA5 /* PBXContainerItemProxy */;
+		};
+		C9CD1C0E21A1CFF300203AA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9CD1BE921A1CFF000203AA5 /* OceanAccessHelper */;
+			targetProxy = C9CD1C0D21A1CFF300203AA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C9CD1BF121A1CFF000203AA5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9CD1BF221A1CFF000203AA5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C9CD1BF921A1CFF300203AA5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9CD1BFA21A1CFF300203AA5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C9CD1C1321A1CFF300203AA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C9CD1C1421A1CFF300203AA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C9CD1C1621A1CFF300203AA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LWUH73QLPT;
+				INFOPLIST_FILE = OceanAccessHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RBC.OceanAccessHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C9CD1C1721A1CFF300203AA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LWUH73QLPT;
+				INFOPLIST_FILE = OceanAccessHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RBC.OceanAccessHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C9CD1C1921A1CFF300203AA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LWUH73QLPT;
+				INFOPLIST_FILE = OceanAccessHelperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RBC.OceanAccessHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OceanAccessHelper.app/OceanAccessHelper";
+			};
+			name = Debug;
+		};
+		C9CD1C1A21A1CFF300203AA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LWUH73QLPT;
+				INFOPLIST_FILE = OceanAccessHelperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RBC.OceanAccessHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OceanAccessHelper.app/OceanAccessHelper";
+			};
+			name = Release;
+		};
+		C9CD1C1C21A1CFF300203AA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LWUH73QLPT;
+				INFOPLIST_FILE = OceanAccessHelperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RBC.OceanAccessHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OceanAccessHelper;
+			};
+			name = Debug;
+		};
+		C9CD1C1D21A1CFF300203AA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LWUH73QLPT;
+				INFOPLIST_FILE = OceanAccessHelperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RBC.OceanAccessHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OceanAccessHelper;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9CD1BE521A1CFF000203AA5 /* Build configuration list for PBXProject "OceanAccessHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9CD1C1321A1CFF300203AA5 /* Debug */,
+				C9CD1C1421A1CFF300203AA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9CD1C1521A1CFF300203AA5 /* Build configuration list for PBXNativeTarget "OceanAccessHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9CD1C1621A1CFF300203AA5 /* Debug */,
+				C9CD1C1721A1CFF300203AA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9CD1C1821A1CFF300203AA5 /* Build configuration list for PBXNativeTarget "OceanAccessHelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9CD1C1921A1CFF300203AA5 /* Debug */,
+				C9CD1C1A21A1CFF300203AA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9CD1C1B21A1CFF300203AA5 /* Build configuration list for PBXNativeTarget "OceanAccessHelperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9CD1C1C21A1CFF300203AA5 /* Debug */,
+				C9CD1C1D21A1CFF300203AA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C9CD1BF421A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C9CD1BF521A1CFF000203AA5 /* OceanAccessHelper.xcdatamodel */,
+			);
+			currentVersion = C9CD1BF521A1CFF000203AA5 /* OceanAccessHelper.xcdatamodel */;
+			path = OceanAccessHelper.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C9CD1BE221A1CFF000203AA5 /* Project object */;
+}
