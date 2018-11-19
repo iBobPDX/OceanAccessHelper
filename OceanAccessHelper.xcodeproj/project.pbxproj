@@ -8,13 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		C9CD1BEE21A1CFF000203AA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1BED21A1CFF000203AA5 /* AppDelegate.swift */; };
-		C9CD1BF021A1CFF000203AA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1BEF21A1CFF000203AA5 /* ViewController.swift */; };
+		C9CD1BF021A1CFF000203AA5 /* ReportArchiveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1BEF21A1CFF000203AA5 /* ReportArchiveTableViewController.swift */; };
 		C9CD1BF321A1CFF000203AA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD1BF121A1CFF000203AA5 /* Main.storyboard */; };
 		C9CD1BF621A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1BF421A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld */; };
 		C9CD1BF821A1CFF300203AA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CD1BF721A1CFF300203AA5 /* Assets.xcassets */; };
 		C9CD1BFB21A1CFF300203AA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD1BF921A1CFF300203AA5 /* LaunchScreen.storyboard */; };
 		C9CD1C0621A1CFF300203AA5 /* OceanAccessHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C0521A1CFF300203AA5 /* OceanAccessHelperTests.swift */; };
 		C9CD1C1121A1CFF300203AA5 /* OceanAccessHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C1021A1CFF300203AA5 /* OceanAccessHelperUITests.swift */; };
+		C9CD1C1F21A1D7E300203AA5 /* Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C1E21A1D7E300203AA5 /* Archive.swift */; };
+		C9CD1C2121A1E09F00203AA5 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C2021A1E09F00203AA5 /* People.swift */; };
+		C9CD1C2321A1E24A00203AA5 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C2221A1E24A00203AA5 /* SampleData.swift */; };
+		C9CD1C2521A1E9CE00203AA5 /* ReportDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C2421A1E9CE00203AA5 /* ReportDetailsTableViewController.swift */; };
+		C9CD1C2921A1EDFC00203AA5 /* OceanAccessHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C2821A1EDFC00203AA5 /* OceanAccessHomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +42,7 @@
 /* Begin PBXFileReference section */
 		C9CD1BEA21A1CFF000203AA5 /* OceanAccessHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OceanAccessHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CD1BED21A1CFF000203AA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C9CD1BEF21A1CFF000203AA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C9CD1BEF21A1CFF000203AA5 /* ReportArchiveTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportArchiveTableViewController.swift; sourceTree = "<group>"; };
 		C9CD1BF221A1CFF000203AA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9CD1BF521A1CFF000203AA5 /* OceanAccessHelper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OceanAccessHelper.xcdatamodel; sourceTree = "<group>"; };
 		C9CD1BF721A1CFF300203AA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +54,11 @@
 		C9CD1C0C21A1CFF300203AA5 /* OceanAccessHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OceanAccessHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CD1C1021A1CFF300203AA5 /* OceanAccessHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanAccessHelperUITests.swift; sourceTree = "<group>"; };
 		C9CD1C1221A1CFF300203AA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9CD1C1E21A1D7E300203AA5 /* Archive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Archive.swift; sourceTree = "<group>"; };
+		C9CD1C2021A1E09F00203AA5 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		C9CD1C2221A1E24A00203AA5 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		C9CD1C2421A1E9CE00203AA5 /* ReportDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsTableViewController.swift; sourceTree = "<group>"; };
+		C9CD1C2821A1EDFC00203AA5 /* OceanAccessHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanAccessHomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +109,9 @@
 		C9CD1BEC21A1CFF000203AA5 /* OceanAccessHelper */ = {
 			isa = PBXGroup;
 			children = (
+				C9CD1C2D21A3022E00203AA5 /* models */,
+				C9CD1C2A21A3020900203AA5 /* controllers */,
 				C9CD1BED21A1CFF000203AA5 /* AppDelegate.swift */,
-				C9CD1BEF21A1CFF000203AA5 /* ViewController.swift */,
 				C9CD1BF121A1CFF000203AA5 /* Main.storyboard */,
 				C9CD1BF721A1CFF300203AA5 /* Assets.xcassets */,
 				C9CD1BF921A1CFF300203AA5 /* LaunchScreen.storyboard */,
@@ -126,6 +137,26 @@
 				C9CD1C1221A1CFF300203AA5 /* Info.plist */,
 			);
 			path = OceanAccessHelperUITests;
+			sourceTree = "<group>";
+		};
+		C9CD1C2A21A3020900203AA5 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C9CD1BEF21A1CFF000203AA5 /* ReportArchiveTableViewController.swift */,
+				C9CD1C2421A1E9CE00203AA5 /* ReportDetailsTableViewController.swift */,
+				C9CD1C2821A1EDFC00203AA5 /* OceanAccessHomeViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		C9CD1C2D21A3022E00203AA5 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				C9CD1C1E21A1D7E300203AA5 /* Archive.swift */,
+				C9CD1C2021A1E09F00203AA5 /* People.swift */,
+				C9CD1C2221A1E24A00203AA5 /* SampleData.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +291,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9CD1BF621A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld in Sources */,
-				C9CD1BF021A1CFF000203AA5 /* ViewController.swift in Sources */,
+				C9CD1C2321A1E24A00203AA5 /* SampleData.swift in Sources */,
+				C9CD1BF021A1CFF000203AA5 /* ReportArchiveTableViewController.swift in Sources */,
+				C9CD1C1F21A1D7E300203AA5 /* Archive.swift in Sources */,
 				C9CD1BEE21A1CFF000203AA5 /* AppDelegate.swift in Sources */,
+				C9CD1C2521A1E9CE00203AA5 /* ReportDetailsTableViewController.swift in Sources */,
+				C9CD1C2921A1EDFC00203AA5 /* OceanAccessHomeViewController.swift in Sources */,
+				C9CD1C2121A1E09F00203AA5 /* People.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
