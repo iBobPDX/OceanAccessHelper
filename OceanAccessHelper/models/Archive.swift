@@ -15,7 +15,10 @@ struct Archive {
     var locationName : String? // should this be derived from crmcCode enum?
     var crmcCode : String? // should this be an enum of all codes?
     
-    var people : PeopleObservation?
+    var peopleWalkersCount : Int?
+    var peopleFishermenCount: Int?
+    var peopleSurfersCount: Int?
+    var peopleOtherCount: Int?
     
     // Approvals
     var crmcRightOfWaySignApproved : Bool

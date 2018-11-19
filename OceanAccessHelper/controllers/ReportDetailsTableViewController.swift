@@ -49,24 +49,30 @@ class ReportDetailsTableViewController: UITableViewController {
             return
         }
         
-        if let reporter = reporterNameTextField.text, let location = locationTextField.text, let crmc = crmcCodeTextField.text {
-            self.report = Archive(dateTime:reportDateTimePicker.date,
-                            reporterName:reporter,
-                            locationName: location,
-                            crmcCode:crmc,
-                            people:PeopleObservation.none, // FIXME: Need to either break this out into separate fields, or have it be an array of observations
-                            crmcRightOfWaySignApproved: approvalsCrmcROWSwitch.isOn,
-                            coaAdoptionSignApproved: approvalsCoaAdoptionSignSwitch.isOn,
-                            rowObstructionApproved: approvalsObstructionToROWSwitch.isOn,
-                            rowPathwayEncroachmentApproved: approvalsEncroachmentToPathwaySwitch.isOn,
-                            rowShorelineEncroachmentApproved: approvalsEncroachmentToShorelineSwitch.isOn,
-                            pedestrianAccessApproved: approvalsWaterAccessSwitch.isOn,
-                            parkingAccessApproved: approvalsParkingSwitch.isOn,
-                            freeFromVandalismApproved: approvalsVandalismSwitch.isOn,
-                            freeFromMarineDebrisAndLitterApproved: approvalsDebrisSwitch.isOn,
-                            comments: commentsTextView.text
-            )
-        } else {
+        if let reporter = reporterNameTextField.text,
+            let location = locationTextField.text,
+            let crmc = crmcCodeTextField.text {
+                self.report = Archive(
+                                dateTime:reportDateTimePicker.date,
+                                reporterName:reporter,
+                                locationName: location,
+                                crmcCode:crmc,
+                                peopleWalkersCount: Int(peopleWalkersCountTextfield.text ?? "0"),
+                                peopleFishermenCount: Int(peopleFishermenCountTextField.text ?? "0"),
+                                peopleSurfersCount: Int(peopleSurfersCountTextField.text ?? "0"),
+                                peopleOtherCount: Int(peopleOtherCountTextField.text ?? "0"),
+                                crmcRightOfWaySignApproved: approvalsCrmcROWSwitch.isOn,
+                                coaAdoptionSignApproved: approvalsCoaAdoptionSignSwitch.isOn,
+                                rowObstructionApproved: approvalsObstructionToROWSwitch.isOn,
+                                rowPathwayEncroachmentApproved: approvalsEncroachmentToPathwaySwitch.isOn,
+                                rowShorelineEncroachmentApproved: approvalsEncroachmentToShorelineSwitch.isOn,
+                                pedestrianAccessApproved: approvalsWaterAccessSwitch.isOn,
+                                parkingAccessApproved: approvalsParkingSwitch.isOn,
+                                freeFromVandalismApproved: approvalsVandalismSwitch.isOn,
+                                freeFromMarineDebrisAndLitterApproved: approvalsDebrisSwitch.isOn,
+                                comments: commentsTextView.text
+                )
+            } else {
             // Throw error, return
         }
     }

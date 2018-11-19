@@ -39,7 +39,7 @@ extension OceanAccessHomeViewController {
             return
         }
         
-        print("We save a report in memory I think \(report)")
+        print("We saved a report in memory #notuseful \(report)") // FIXME: Persist this to disc via CoreData
         
         
     }

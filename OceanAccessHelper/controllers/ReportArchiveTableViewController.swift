@@ -9,7 +9,7 @@
 import UIKit
 
 class ReportArchiveTableViewController: UITableViewController {
-    var archives = SampleData.generateArchiveData()
+    var archives = SampleData.generateArchiveData() // FIXME: Pull data from disc via CoreData
     
     override func viewDidLoad() {
         super.viewDidLoad()
