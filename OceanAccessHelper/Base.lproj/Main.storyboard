@@ -643,13 +643,27 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Vpo-2E-rNS">
                             <connections>
-                                <segue destination="4bO-RK-1HG" kind="unwind" unwindAction="saveReportDetails:" id="LQg-hL-6IE"/>
+                                <segue destination="4bO-RK-1HG" kind="unwind" identifier="saveReportDetails" unwindAction="saveReportDetails:" id="LQg-hL-6IE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="approvalsCoaAdoptionSignSwitch" destination="EIf-6a-n6C" id="efw-sq-lRP"/>
+                        <outlet property="approvalsCrmcROWSwitch" destination="SEz-RW-7HA" id="MkW-wF-BVg"/>
+                        <outlet property="approvalsDebrisSwitch" destination="qPx-3n-0mT" id="c6Z-l2-05G"/>
+                        <outlet property="approvalsEncroachmentToPathwaySwitch" destination="DHz-zQ-izP" id="3Qi-IF-RuO"/>
+                        <outlet property="approvalsEncroachmentToShorelineSwitch" destination="tXL-J7-VIn" id="ijQ-yi-NTA"/>
+                        <outlet property="approvalsObstructionToROWSwitch" destination="ZyN-Ey-qxb" id="GOC-Qy-wii"/>
+                        <outlet property="approvalsParkingSwitch" destination="fEf-X3-g0a" id="EQw-XF-OHf"/>
+                        <outlet property="approvalsVandalismSwitch" destination="pSF-ba-Z1M" id="2IG-Aa-DWC"/>
+                        <outlet property="approvalsWaterAccessSwitch" destination="T0I-mw-Vjn" id="Pjl-qp-xdv"/>
+                        <outlet property="commentsTextView" destination="lHa-6I-sqJ" id="X3i-uq-M57"/>
                         <outlet property="crmcCodeTextField" destination="fs6-FE-ytr" id="jfH-vi-gsG"/>
                         <outlet property="locationTextField" destination="AIC-gz-QT4" id="VzJ-WK-nv4"/>
+                        <outlet property="peopleFishermenCountTextField" destination="4yF-6l-oMO" id="Z8f-Vk-YmU"/>
+                        <outlet property="peopleOtherCountTextField" destination="59n-OT-OE1" id="wJQ-fP-vma"/>
+                        <outlet property="peopleSurfersCountTextField" destination="RI2-g3-U4x" id="qfI-ax-KEX"/>
+                        <outlet property="peopleWalkersCountTextfield" destination="xyR-So-jRg" id="PEJ-c2-8Ls"/>
                         <outlet property="reportDateTimePicker" destination="vYP-BY-zFL" id="MKj-YR-OqX"/>
                         <outlet property="reporterNameTextField" destination="HTB-gL-7bK" id="79d-qx-Bg5"/>
                     </connections>

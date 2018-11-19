@@ -35,5 +35,12 @@ extension OceanAccessHomeViewController {
     }
     
     @IBAction func saveReportDetails(_ segue: UIStoryboardSegue) {
+        guard let reportDetailsTableViewController = segue.source as? ReportDetailsTableViewController, let report = reportDetailsTableViewController.report else {
+            return
+        }
+        
+        print("We save a report in memory I think \(report)")
+        
+        
     }
 }
