@@ -21,7 +21,8 @@ struct Archive {
     var crmcRightOfWaySignApproved : Bool
     var coaAdoptionSignApproved : Bool
     var rowObstructionApproved: Bool
-    var rowEncroachmentApproved: Bool
+    var rowPathwayEncroachmentApproved: Bool
+    var rowShorelineEncroachmentApproved: Bool
     var pedestrianAccessApproved: Bool
     var parkingAccessApproved: Bool
     var freeFromVandalismApproved: Bool

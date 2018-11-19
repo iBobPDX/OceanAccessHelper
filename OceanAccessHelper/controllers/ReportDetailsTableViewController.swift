@@ -8,8 +8,14 @@
 
 import UIKit
 
-class ReportDetailsTableViewController: UITableViewController {
+class ReportDetailsTableViewController: UITableViewController, UITextViewDelegate {
 
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var crmcCodeTextField: UITextField!
+    @IBOutlet weak var reporterNameTextField: UITextField!
+    @IBOutlet weak var reportDateTimePicker: UIDatePicker!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,4 +25,9 @@ class ReportDetailsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+}
+
+// MARK - UITextViewDelegate
+extension ReportDetailsTableViewController {
+    //
 }

@@ -10,7 +10,7 @@ import Foundation
 
 enum PeopleObservation {
     case none
-    case walkers(Int)
+    case walkers(Int) /* Int is meant to encode the count of each type, we might rething this */
     case fishermen(Int)
     case surfers(Int)
     case other(Int)
