@@ -16,7 +16,6 @@
 		C9CD1C0621A1CFF300203AA5 /* OceanAccessHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C0521A1CFF300203AA5 /* OceanAccessHelperTests.swift */; };
 		C9CD1C1121A1CFF300203AA5 /* OceanAccessHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C1021A1CFF300203AA5 /* OceanAccessHelperUITests.swift */; };
 		C9CD1C1F21A1D7E300203AA5 /* Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C1E21A1D7E300203AA5 /* Archive.swift */; };
-		C9CD1C2321A1E24A00203AA5 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C2221A1E24A00203AA5 /* SampleData.swift */; };
 		C9CD1C2521A1E9CE00203AA5 /* ReportDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C2421A1E9CE00203AA5 /* ReportDetailsTableViewController.swift */; };
 		C9CD1C2921A1EDFC00203AA5 /* OceanAccessHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C2821A1EDFC00203AA5 /* OceanAccessHomeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -54,7 +53,6 @@
 		C9CD1C1021A1CFF300203AA5 /* OceanAccessHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanAccessHelperUITests.swift; sourceTree = "<group>"; };
 		C9CD1C1221A1CFF300203AA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9CD1C1E21A1D7E300203AA5 /* Archive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Archive.swift; sourceTree = "<group>"; };
-		C9CD1C2221A1E24A00203AA5 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		C9CD1C2421A1E9CE00203AA5 /* ReportDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsTableViewController.swift; sourceTree = "<group>"; };
 		C9CD1C2821A1EDFC00203AA5 /* OceanAccessHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanAccessHomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,7 +112,6 @@
 				C9CD1BF721A1CFF300203AA5 /* Assets.xcassets */,
 				C9CD1BF921A1CFF300203AA5 /* LaunchScreen.storyboard */,
 				C9CD1BFC21A1CFF300203AA5 /* Info.plist */,
-				C9CD1BF421A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld */,
 			);
 			path = OceanAccessHelper;
 			sourceTree = "<group>";
@@ -150,8 +147,8 @@
 		C9CD1C2D21A3022E00203AA5 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				C9CD1BF421A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld */,
 				C9CD1C1E21A1D7E300203AA5 /* Archive.swift */,
-				C9CD1C2221A1E24A00203AA5 /* SampleData.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -288,7 +285,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9CD1BF621A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld in Sources */,
-				C9CD1C2321A1E24A00203AA5 /* SampleData.swift in Sources */,
 				C9CD1BF021A1CFF000203AA5 /* ReportArchiveTableViewController.swift in Sources */,
 				C9CD1C1F21A1D7E300203AA5 /* Archive.swift in Sources */,
 				C9CD1BEE21A1CFF000203AA5 /* AppDelegate.swift in Sources */,

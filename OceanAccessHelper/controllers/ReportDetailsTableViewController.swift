@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class ReportDetailsTableViewController: UITableViewController {
+class ReportDetailsTableViewController: UITableViewController, ArchiveManagedContext {
 
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var crmcCodeTextField: UITextField!
@@ -32,6 +33,7 @@ class ReportDetailsTableViewController: UITableViewController {
     
     @IBOutlet weak var commentsTextView: UITextView!
     
+    var managedObjectContext: NSManagedObjectContext? // ArchiveManagedContext
     var report: Archive?
     
     override func viewDidLoad() {
@@ -45,33 +47,34 @@ class ReportDetailsTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let segueIdentifier = segue.identifier, segueIdentifier == "saveReportDetails" else {
+        guard let segueIdentifier = segue.identifier, segueIdentifier == "saveReportDetails", let managedObjectContext = managedObjectContext else {
             return
         }
         
-        if let reporter = reporterNameTextField.text,
-            let location = locationTextField.text,
-            let crmc = crmcCodeTextField.text {
-                self.report = Archive(
-                                dateTime:reportDateTimePicker.date,
-                                reporterName:reporter,
-                                locationName: location,
-                                crmcCode:crmc,
-                                peopleWalkersCount: Int(peopleWalkersCountTextfield.text ?? "0"),
-                                peopleFishermenCount: Int(peopleFishermenCountTextField.text ?? "0"),
-                                peopleSurfersCount: Int(peopleSurfersCountTextField.text ?? "0"),
-                                peopleOtherCount: Int(peopleOtherCountTextField.text ?? "0"),
-                                crmcRightOfWaySignApproved: approvalsCrmcROWSwitch.isOn,
-                                coaAdoptionSignApproved: approvalsCoaAdoptionSignSwitch.isOn,
-                                rowObstructionApproved: approvalsObstructionToROWSwitch.isOn,
-                                rowPathwayEncroachmentApproved: approvalsEncroachmentToPathwaySwitch.isOn,
-                                rowShorelineEncroachmentApproved: approvalsEncroachmentToShorelineSwitch.isOn,
-                                pedestrianAccessApproved: approvalsWaterAccessSwitch.isOn,
-                                parkingAccessApproved: approvalsParkingSwitch.isOn,
-                                freeFromVandalismApproved: approvalsVandalismSwitch.isOn,
-                                freeFromMarineDebrisAndLitterApproved: approvalsDebrisSwitch.isOn,
-                                comments: commentsTextView.text
-                )
+        if let reporter = reporterNameTextField.text, let location = locationTextField.text, let crmc = crmcCodeTextField.text {
+            
+            let report = Archive(context: managedObjectContext)
+            report.dateTime = reportDateTimePicker.date
+            report.reporterName = reporter
+            report.locationName = location
+            report.crmcCode = crmc
+            report.peopleWalkersCount = Int64(peopleWalkersCountTextfield.text ?? "0") ?? 0
+            report.peopleFishermenCount = Int64(peopleFishermenCountTextField.text ?? "0") ?? 0
+            report.peopleSurfersCount = Int64(peopleSurfersCountTextField.text ?? "0") ?? 0
+            report.peopleOtherCount = Int64(peopleOtherCountTextField.text ?? "0") ?? 0
+            report.crmcRightOfWaySignApproved = approvalsCrmcROWSwitch.isOn
+            report.coaAdoptionSignApproved = approvalsCoaAdoptionSignSwitch.isOn
+            report.rowObstructionApproved = approvalsObstructionToROWSwitch.isOn
+            report.rowPathwayEncroachmentApproved = approvalsEncroachmentToPathwaySwitch.isOn
+            report.rowShorelineEncroachmentApproved = approvalsEncroachmentToShorelineSwitch.isOn
+            report.pedestrianAccessApproved = approvalsWaterAccessSwitch.isOn
+            report.parkingAccessApproved = approvalsParkingSwitch.isOn
+            report.freeFromVandalismApproved = approvalsVandalismSwitch.isOn
+            report.freeFromMarineDebrisAndLitterApproved = approvalsDebrisSwitch.isOn
+            report.comments = commentsTextView.text
+            
+            self.report = report
+
             } else {
             // Throw error, return
         }
