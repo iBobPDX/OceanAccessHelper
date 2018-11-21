@@ -37,6 +37,12 @@ class ReportArchiveTableViewController: UITableViewController, ArchiveManagedCon
         destinationViewController.report = selectedReport
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            managedObjectContext?.delete(fetchedResultsController.object(at: indexPath))
+        }
+    }
+    
     fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Archive> = {
         guard let managedObjectContext = managedObjectContext else {
             fatalError("Invalid managed object context")
@@ -56,6 +62,8 @@ class ReportArchiveTableViewController: UITableViewController, ArchiveManagedCon
         
         return fetchedResultsController
     }()
+    
+    
 
 }
 
@@ -76,16 +84,47 @@ extension ReportArchiveTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArchiveCell", for: indexPath)
+        configure(cell, at: indexPath)
+        
+        return cell
+    }
+    
+    func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
         let archive = fetchedResultsController.object(at: indexPath)
         
         cell.textLabel?.text = archive.locationName
         cell.detailTextLabel?.text = archive.dateTime?.description
-        
-        return cell
     }
 }
 
 extension ReportArchiveTableViewController: NSFetchedResultsControllerDelegate {
-    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch (type) {
+            case .insert:
+                if let indexPath = newIndexPath {
+                    tableView.insertRows(at: [indexPath], with: .fade)
+                }
+                break;
+            case .delete:
+                if let indexPath = indexPath {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+                break;
+            case .update:
+                if let indexPath = indexPath, let cell = tableView.cellForRow(at: indexPath) {
+                    configure(cell, at: indexPath)
+                }
+                break;
+            case .move:
+                if let indexPath = indexPath {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+                
+                if let newIndexPath = newIndexPath {
+                    tableView.insertRows(at: [newIndexPath], with: .fade)
+                }
+                break;
+        }
+    }
 }
 
