@@ -38,45 +38,102 @@ class ReportDetailsTableViewController: UITableViewController, ArchiveManagedCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        // If we have an existing report on load then update our view to reflect this report for editing
+        if let report = report {
+            updateViewForReport(report)
+        }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let segueIdentifier = segue.identifier, segueIdentifier == "saveReportDetails", let managedObjectContext = managedObjectContext else {
-            return
+    func createReport(with context: NSManagedObjectContext) -> Archive? {
+        guard let reporter = reporterNameTextField.text, let location = locationTextField.text, let crmc = crmcCodeTextField.text else {
+            print("Failed to create report") // FIXME: Let's add some reasonable error handling here
+            return nil
         }
         
-        if let reporter = reporterNameTextField.text, let location = locationTextField.text, let crmc = crmcCodeTextField.text {
+        let activeReport = report ?? Archive(context: context)
+        
+        activeReport.dateTime = reportDateTimePicker.date
+        activeReport.reporterName = reporter
+        activeReport.locationName = location
+        activeReport.crmcCode = crmc
+        
+        activeReport.peopleWalkersCount = Int64(peopleWalkersCountTextfield.text ?? "0") ?? 0
+        activeReport.peopleFishermenCount = Int64(peopleFishermenCountTextField.text ?? "0") ?? 0
+        activeReport.peopleSurfersCount = Int64(peopleSurfersCountTextField.text ?? "0") ?? 0
+        activeReport.peopleOtherCount = Int64(peopleOtherCountTextField.text ?? "0") ?? 0
+        
+        activeReport.crmcRightOfWaySignApproved = approvalsCrmcROWSwitch.isOn
+        activeReport.coaAdoptionSignApproved = approvalsCoaAdoptionSignSwitch.isOn
+        activeReport.rowObstructionApproved = approvalsObstructionToROWSwitch.isOn
+        activeReport.rowPathwayEncroachmentApproved = approvalsEncroachmentToPathwaySwitch.isOn
+        activeReport.rowShorelineEncroachmentApproved = approvalsEncroachmentToShorelineSwitch.isOn
+        activeReport.pedestrianAccessApproved = approvalsWaterAccessSwitch.isOn
+        activeReport.parkingAccessApproved = approvalsParkingSwitch.isOn
+        activeReport.freeFromVandalismApproved = approvalsVandalismSwitch.isOn
+        activeReport.freeFromMarineDebrisAndLitterApproved = approvalsDebrisSwitch.isOn
+        
+        activeReport.comments = commentsTextView.text
+        
+        return activeReport
+    }
+    
+    func updateViewForReport(_ report:Archive) {
+        if let date = report.dateTime {
+            reportDateTimePicker.setDate(date, animated: false)
+            reporterNameTextField.text = report.reporterName
+            locationTextField.text = report.locationName
+            crmcCodeTextField.text = report.crmcCode
             
-            let report = Archive(context: managedObjectContext)
-            report.dateTime = reportDateTimePicker.date
-            report.reporterName = reporter
-            report.locationName = location
-            report.crmcCode = crmc
-            report.peopleWalkersCount = Int64(peopleWalkersCountTextfield.text ?? "0") ?? 0
-            report.peopleFishermenCount = Int64(peopleFishermenCountTextField.text ?? "0") ?? 0
-            report.peopleSurfersCount = Int64(peopleSurfersCountTextField.text ?? "0") ?? 0
-            report.peopleOtherCount = Int64(peopleOtherCountTextField.text ?? "0") ?? 0
-            report.crmcRightOfWaySignApproved = approvalsCrmcROWSwitch.isOn
-            report.coaAdoptionSignApproved = approvalsCoaAdoptionSignSwitch.isOn
-            report.rowObstructionApproved = approvalsObstructionToROWSwitch.isOn
-            report.rowPathwayEncroachmentApproved = approvalsEncroachmentToPathwaySwitch.isOn
-            report.rowShorelineEncroachmentApproved = approvalsEncroachmentToShorelineSwitch.isOn
-            report.pedestrianAccessApproved = approvalsWaterAccessSwitch.isOn
-            report.parkingAccessApproved = approvalsParkingSwitch.isOn
-            report.freeFromVandalismApproved = approvalsVandalismSwitch.isOn
-            report.freeFromMarineDebrisAndLitterApproved = approvalsDebrisSwitch.isOn
-            report.comments = commentsTextView.text
+            peopleWalkersCountTextfield.text = String(report.peopleWalkersCount)
+            peopleFishermenCountTextField.text = String(report.peopleFishermenCount)
+            peopleSurfersCountTextField.text = String(report.peopleSurfersCount)
+            peopleOtherCountTextField.text = String(report.peopleOtherCount)
             
-            self.report = report
+            approvalsCrmcROWSwitch.isOn = report.crmcRightOfWaySignApproved
+            approvalsCoaAdoptionSignSwitch.isOn = report.coaAdoptionSignApproved
+            approvalsObstructionToROWSwitch.isOn = report.rowObstructionApproved
+            approvalsEncroachmentToPathwaySwitch.isOn = report.rowPathwayEncroachmentApproved
+            approvalsEncroachmentToShorelineSwitch.isOn = report.rowShorelineEncroachmentApproved
+            approvalsWaterAccessSwitch.isOn = report.pedestrianAccessApproved
+            approvalsParkingSwitch.isOn = report.parkingAccessApproved
+            approvalsVandalismSwitch.isOn = report.freeFromVandalismApproved
+            approvalsDebrisSwitch.isOn = report.freeFromMarineDebrisAndLitterApproved
+            
+            commentsTextView.text = report.comments
+        }
+    }
+    
+    
 
-            } else {
-            // Throw error, return
+    // MARK - IBActions
+    @IBAction func cancelToOeanAccessHome(_ segue: UIStoryboardSegue) {
+        close(true, nil)
+    }
+    
+    @IBAction func saveReportDetails(_ segue: UIStoryboardSegue) {
+        if let managedObjectContext = managedObjectContext {
+            
+            // update report
+            report = createReport(with: managedObjectContext)
+            
+            // attempt to save context
+            do {
+                try managedObjectContext.save()
+            } catch {
+                print("Failed saving")
+            }
+            
+            close(true, nil)
+        }
+    }
+    
+    // currently assumes modal presentation, might want to write UIViewController extension to determine if VC has been pushed or modally presented
+    func close(_ animated: Bool, _ completion:(() -> Void)?) {
+        if let nvc = navigationController {
+            nvc.dismiss(animated: animated)
+        } else {
+            dismiss(animated: animated, completion: completion)
         }
     }
 }

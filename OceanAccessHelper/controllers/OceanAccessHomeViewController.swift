@@ -47,26 +47,6 @@ class OceanAccessHomeViewController: UIViewController {
 
 }
 
-// MARK: - IBActions
-extension OceanAccessHomeViewController {
-    @IBAction func cancelToOeanAccessHome(_ segue: UIStoryboardSegue) {
-    }
-    
-    @IBAction func saveReportDetails(_ segue: UIStoryboardSegue) {
-        guard let reportDetailsTableViewController = segue.source as? ReportDetailsTableViewController, let _ = reportDetailsTableViewController.report else {
-            return
-        }
-        
-        do {
-            try persistentContainer.viewContext.save()
-        } catch {
-            print("Failed saving")
-        }
-        
-        
-    }
-}
-
 protocol ArchiveManagedContext {
     var managedObjectContext: NSManagedObjectContext? { get set }
 }

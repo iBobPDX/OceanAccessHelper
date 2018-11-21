@@ -11,6 +11,7 @@ import CoreData
 
 class ReportArchiveTableViewController: UITableViewController, ArchiveManagedContext {
     var managedObjectContext: NSManagedObjectContext?
+    var selectedReport: Archive?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,20 +19,26 @@ class ReportArchiveTableViewController: UITableViewController, ArchiveManagedCon
         do {
             try fetchedResultsController.performFetch()
         } catch {
-            print("Issues")
+            print("Failed to fetch results")
         }
     }
     
-    private func setupView() {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // dig out the view controller we care about
+        var destinationViewController: ReportDetailsTableViewController
+        if let navigationController = segue.destination as? UINavigationController {
+            destinationViewController = navigationController.visibleViewController as! ReportDetailsTableViewController // FIXME: Evaluate force downcast here for a better approach
+        } else {
+            destinationViewController = segue.destination as! ReportDetailsTableViewController
+        }
         
-    }
-    
-    private func updateView() {
-        
+        // Configure View Controller
+        destinationViewController.managedObjectContext = managedObjectContext
+        destinationViewController.report = selectedReport
     }
     
     fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Archive> = {
-        guard let managedObjectContext = self.managedObjectContext else {
+        guard let managedObjectContext = managedObjectContext else {
             fatalError("Invalid managed object context")
         }
         
@@ -52,6 +59,14 @@ class ReportArchiveTableViewController: UITableViewController, ArchiveManagedCon
 
 }
 
+// MARK - UITableViewDelegate
+extension ReportArchiveTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedReport = fetchedResultsController.object(at: indexPath)
+        performSegue(withIdentifier: "editReportSegue", sender: self)
+    }
+}
+
 // MARK - UITableViewDataSource
 extension ReportArchiveTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,5 +85,7 @@ extension ReportArchiveTableViewController {
     }
 }
 
-extension ReportArchiveTableViewController: NSFetchedResultsControllerDelegate {}
+extension ReportArchiveTableViewController: NSFetchedResultsControllerDelegate {
+    
+}
 

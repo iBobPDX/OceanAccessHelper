@@ -638,12 +638,12 @@
                     <navigationItem key="navigationItem" title="New Report" id="glC-XU-NRO">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="s4G-EA-zVi">
                             <connections>
-                                <segue destination="4bO-RK-1HG" kind="unwind" unwindAction="cancelToOeanAccessHome:" id="E5u-76-CsL"/>
+                                <action selector="cancelToOeanAccessHome:" destination="NEg-WX-vy6" id="MFC-1M-Tga"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Vpo-2E-rNS">
                             <connections>
-                                <segue destination="4bO-RK-1HG" kind="unwind" identifier="saveReportDetails" unwindAction="saveReportDetails:" id="LQg-hL-6IE"/>
+                                <action selector="saveReportDetails:" destination="NEg-WX-vy6" id="IrT-1q-tWF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -669,9 +669,8 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCp-mW-2hZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="4bO-RK-1HG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2712.8000000000002" y="-163.26836581709148"/>
+            <point key="canvasLocation" x="3236" y="-163"/>
         </scene>
         <!--Report Archive-->
         <scene sceneID="12m-1R-Yro">
@@ -713,6 +712,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Report Archive" id="QUF-Qa-yFk"/>
+                    <connections>
+                        <segue destination="rGk-mw-gxS" kind="presentation" identifier="editReportSegue" id="KeG-PK-r9V"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5s-8z-Jt5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -752,7 +754,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhW-i4-Ggn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1773.5999999999999" y="-163.26836581709148"/>
+            <point key="canvasLocation" x="2570" y="-163"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="KeG-PK-r9V"/>
+    </inferredMetricsTieBreakers>
 </document>
