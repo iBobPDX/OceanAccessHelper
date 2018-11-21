@@ -36,6 +36,8 @@ class ReportDetailsTableViewController: UITableViewController, ArchiveManagedCon
     var managedObjectContext: NSManagedObjectContext? // ArchiveManagedContext
     var report: Archive?
     
+    let crmcCodes: [(String, String)] = [("",""), ("Cherry Street", "Z-10"), ("Pine Street", "Z-09")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,7 +45,17 @@ class ReportDetailsTableViewController: UITableViewController, ArchiveManagedCon
         if let report = report {
             updateViewForReport(report)
         }
+        
+        setupCrmcCodePicker()
     }
+    
+    func setupCrmcCodePicker() {
+        let picker = UIPickerView()
+        picker.delegate = self
+        picker.dataSource = self
+        locationTextField.inputView = picker
+    }
+    
     
     func createReport(with context: NSManagedObjectContext) -> Archive? {
         guard let reporter = reporterNameTextField.text, let location = locationTextField.text, let crmc = crmcCodeTextField.text else {
@@ -135,5 +147,25 @@ class ReportDetailsTableViewController: UITableViewController, ArchiveManagedCon
         } else {
             dismiss(animated: animated, completion: completion)
         }
+    }
+}
+
+extension ReportDetailsTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return crmcCodes.count
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return crmcCodes[row].0
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        locationTextField.text = crmcCodes[row].0
+        crmcCodeTextField.text = crmcCodes[row].1
     }
 }

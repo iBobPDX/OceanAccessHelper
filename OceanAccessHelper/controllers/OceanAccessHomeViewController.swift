@@ -10,11 +10,18 @@ import UIKit
 import CoreData
 
 class OceanAccessHomeViewController: UIViewController {
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var newReportButton: UIButton!
+    
+    @IBOutlet weak var reportArchiveButton: UIButton!
+    
+    
     private let persistentContainer = NSPersistentContainer(name: "OceanAccessHelper")
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Setup CoreData stack
         persistentContainer.loadPersistentStores { (persistentStoreDescription, error) in
             if let error = error {
                 print("Unable to Load Persistent Store")
@@ -24,6 +31,30 @@ class OceanAccessHomeViewController: UIViewController {
                 //continue
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let image = UIImage(named: "coa-background") {
+            self.backgroundImageView.image = image
+            self.backgroundImageView.contentMode = .scaleAspectFill
+//            addParallaxToView(self.backgroundImageView)
+        }
+        
+        animateButtonIntroduction()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        
+    }
+    
+    func animateButtonIntroduction() {
+        UIView.animate(withDuration: 2.0, delay: 1.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+        }, completion: nil)
     }
     
 
@@ -47,6 +78,24 @@ class OceanAccessHomeViewController: UIViewController {
 
 }
 
+// MARK - ArchiveManagedContext
 protocol ArchiveManagedContext {
     var managedObjectContext: NSManagedObjectContext? { get set }
+}
+
+// MARK - Parallax
+func addParallaxToView(_ view: UIView) {
+    let amount = 100
+    
+    let horizontal = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
+    horizontal.minimumRelativeValue = -amount
+    horizontal.maximumRelativeValue = amount
+    
+    let vertical = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
+    vertical.minimumRelativeValue = -amount
+    vertical.maximumRelativeValue = amount
+    
+    let group = UIMotionEffectGroup()
+    group.motionEffects = [horizontal, vertical]
+    view.addMotionEffect(group)
 }

@@ -52,7 +52,7 @@ class ReportArchiveTableViewController: UITableViewController, ArchiveManagedCon
         let fetchRequest: NSFetchRequest<Archive> = Archive.fetchRequest()
         
         // Configure Fetch Request
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateTime", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateTime", ascending: false)]
         
         // Create Fetched Results Controller
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
@@ -93,7 +93,13 @@ extension ReportArchiveTableViewController {
         let archive = fetchedResultsController.object(at: indexPath)
         
         cell.textLabel?.text = archive.locationName
-        cell.detailTextLabel?.text = archive.dateTime?.description
+        
+        if let date = archive.dateTime {
+            let dateFormatter = DateFormatter()
+            dateFormatter.setLocalizedDateFormatFromTemplate("MMM d, h:mm a")
+            cell.detailTextLabel?.text = dateFormatter.string(from: date)
+        }
+        
     }
 }
 
