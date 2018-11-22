@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ReportDetailsTableViewController: UITableViewController, ArchiveManagedContext {
+class ReportDetailsTableViewController: BlurTableViewController, ArchiveManagedContext {
 
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var crmcCodeTextField: UITextField!
@@ -35,8 +35,7 @@ class ReportDetailsTableViewController: UITableViewController, ArchiveManagedCon
     
     var managedObjectContext: NSManagedObjectContext? // ArchiveManagedContext
     var report: Archive?
-    
-    let crmcCodes: [(String, String)] = [("",""), ("Cherry Street", "Z-10"), ("Pine Street", "Z-09")]
+    var crmcCodes = CRMC.allCodes
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +52,9 @@ class ReportDetailsTableViewController: UITableViewController, ArchiveManagedCon
         let picker = UIPickerView()
         picker.delegate = self
         picker.dataSource = self
+        
         locationTextField.inputView = picker
+        crmcCodes.insert(("", ""), at: 0) // Putting blank row in data set for picker user experience
     }
     
     

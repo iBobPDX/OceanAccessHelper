@@ -22,23 +22,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLa-FN-UDd">
-                                <rect key="frame" x="0.0" y="492" width="375" height="80"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="8" y="494" width="359" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Xv7-bD-QUt"/>
                                 </constraints>
-                                <state key="normal" title="New Report"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="New Report">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="rGk-mw-gxS" kind="presentation" id="xP6-Xx-eBM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGu-SJ-nf0">
-                                <rect key="frame" x="0.0" y="577" width="375" height="90"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="8" y="579" width="359" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="Bhj-5U-bWm"/>
+                                    <constraint firstAttribute="height" constant="80" id="Bhj-5U-bWm"/>
                                 </constraints>
-                                <state key="normal" title="Report Archive"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Report Archive">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="RDL-K2-52i" kind="show" id="Axh-om-f53"/>
                                 </connections>
@@ -46,17 +52,17 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GGu-SJ-nf0" secondAttribute="trailing" id="0Zx-4B-TD6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GGu-SJ-nf0" secondAttribute="bottom" id="0zs-f4-hCs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GGu-SJ-nf0" secondAttribute="trailing" constant="8" id="0Zx-4B-TD6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GGu-SJ-nf0" secondAttribute="bottom" constant="8" id="0zs-f4-hCs"/>
                             <constraint firstItem="hEW-4E-TT2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="737-Tt-WTd"/>
                             <constraint firstItem="GGu-SJ-nf0" firstAttribute="top" secondItem="QLa-FN-UDd" secondAttribute="bottom" constant="5" id="AXq-zX-tn9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QLa-FN-UDd" secondAttribute="trailing" id="MXo-Rd-DQX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QLa-FN-UDd" secondAttribute="trailing" constant="8" id="MXo-Rd-DQX"/>
                             <constraint firstItem="hEW-4E-TT2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OIo-c9-FsZ"/>
                             <constraint firstItem="hEW-4E-TT2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YR5-BD-nVy"/>
-                            <constraint firstItem="GGu-SJ-nf0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aW6-zG-Dfw"/>
+                            <constraint firstItem="GGu-SJ-nf0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="aW6-zG-Dfw"/>
                             <constraint firstAttribute="trailing" secondItem="hEW-4E-TT2" secondAttribute="trailing" id="ama-Mc-mzq"/>
                             <constraint firstAttribute="bottom" secondItem="hEW-4E-TT2" secondAttribute="bottom" id="cl2-Oo-6x0"/>
-                            <constraint firstItem="QLa-FN-UDd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rsv-Sp-xY6"/>
+                            <constraint firstItem="QLa-FN-UDd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="rsv-Sp-xY6"/>
                             <constraint firstItem="hEW-4E-TT2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xG7-5o-qth"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

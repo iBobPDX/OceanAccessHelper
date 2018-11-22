@@ -31,6 +31,8 @@ class OceanAccessHomeViewController: UIViewController {
                 //continue
             }
         }
+        
+        configureButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,14 +44,17 @@ class OceanAccessHomeViewController: UIViewController {
 //            addParallaxToView(self.backgroundImageView)
         }
         
-        animateButtonIntroduction()
+//        animateButtonIntroduction() // Might play with animating these guys in?
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    func configureButtons() {
+        let radius = CGFloat(10.0)
         
+        newReportButton.layer.cornerRadius = radius
+        reportArchiveButton.layer.cornerRadius = radius
         
-        
+        newReportButton?.addBlur(at: 0, style: .regular)
+        reportArchiveButton?.addBlur(at: 0, style: .regular)
     }
     
     func animateButtonIntroduction() {
