@@ -1,5 +1,5 @@
 //
-//  Archive.swift
+//  Report.swift
 //  OceanAccessHelper
 //
 //  Created by Robert Corlett on 11/18/18.
@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-extension Archive {
+extension Report {
     
     var formattedDateTime: String? {
         var formattedDate: String? = nil

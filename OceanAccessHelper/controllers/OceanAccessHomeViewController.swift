@@ -68,11 +68,11 @@ class OceanAccessHomeViewController: UIViewController {
         // Get the new view controller using segue.destination.
         
         // dig out the view controller we care about
-        var destinationViewController: ArchiveManagedContext
+        var destinationViewController: ReportManagedContext
         if let navigationController = segue.destination as? UINavigationController {
-            destinationViewController = navigationController.visibleViewController as! ArchiveManagedContext // FIXME: Evaluate force downcast here for a better approach
+            destinationViewController = navigationController.visibleViewController as! ReportManagedContext // FIXME: Evaluate force downcast here for a better approach
         } else {
-            destinationViewController = segue.destination as! ArchiveManagedContext
+            destinationViewController = segue.destination as! ReportManagedContext
         }
         
         // Configure View Controller
@@ -83,8 +83,8 @@ class OceanAccessHomeViewController: UIViewController {
 
 }
 
-// MARK - ArchiveManagedContext
-protocol ArchiveManagedContext {
+// MARK - ReportManagedContext
+protocol ReportManagedContext {
     var managedObjectContext: NSManagedObjectContext? { get set }
 }
 

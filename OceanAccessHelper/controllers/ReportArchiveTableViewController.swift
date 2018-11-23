@@ -9,9 +9,9 @@
 import UIKit
 import CoreData
 
-class ReportArchiveTableViewController: BlurTableViewController, ArchiveManagedContext {
+class ReportArchiveTableViewController: BlurTableViewController, ReportManagedContext {
     var managedObjectContext: NSManagedObjectContext?
-    var selectedReport: Archive?
+    var selectedReport: Report?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,13 +43,13 @@ class ReportArchiveTableViewController: BlurTableViewController, ArchiveManagedC
         }
     }
     
-    fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Archive> = {
+    fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Report> = {
         guard let managedObjectContext = managedObjectContext else {
             fatalError("Invalid managed object context")
         }
         
         // Create Fetch Request
-        let fetchRequest: NSFetchRequest<Archive> = Archive.fetchRequest()
+        let fetchRequest: NSFetchRequest<Report> = Report.fetchRequest()
         
         // Configure Fetch Request
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateTime", ascending: false)]
@@ -78,8 +78,8 @@ extension ReportArchiveTableViewController {
 // MARK - UITableViewDataSource
 extension ReportArchiveTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let archives = fetchedResultsController.fetchedObjects else { return 0 }
-        return archives.count
+        guard let reports = fetchedResultsController.fetchedObjects else { return 0 }
+        return reports.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -90,10 +90,10 @@ extension ReportArchiveTableViewController {
     }
     
     func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
-        let archive = fetchedResultsController.object(at: indexPath)
+        let report = fetchedResultsController.object(at: indexPath)
         
-        cell.textLabel?.text = archive.locationName
-        cell.detailTextLabel?.text = archive.formattedDateTime
+        cell.textLabel?.text = report.locationName
+        cell.detailTextLabel?.text = report.formattedDateTime
     }
 }
 

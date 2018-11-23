@@ -15,7 +15,7 @@
 		C9CD1BFB21A1CFF300203AA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD1BF921A1CFF300203AA5 /* LaunchScreen.storyboard */; };
 		C9CD1C0621A1CFF300203AA5 /* OceanAccessHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C0521A1CFF300203AA5 /* OceanAccessHelperTests.swift */; };
 		C9CD1C1121A1CFF300203AA5 /* OceanAccessHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C1021A1CFF300203AA5 /* OceanAccessHelperUITests.swift */; };
-		C9CD1C1F21A1D7E300203AA5 /* Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C1E21A1D7E300203AA5 /* Archive.swift */; };
+		C9CD1C1F21A1D7E300203AA5 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C1E21A1D7E300203AA5 /* Report.swift */; };
 		C9CD1C2521A1E9CE00203AA5 /* ReportDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C2421A1E9CE00203AA5 /* ReportDetailsTableViewController.swift */; };
 		C9CD1C2921A1EDFC00203AA5 /* OceanAccessHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C2821A1EDFC00203AA5 /* OceanAccessHomeViewController.swift */; };
 		C9CD1C3721A616E200203AA5 /* CRMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C3621A616E200203AA5 /* CRMC.swift */; };
@@ -55,7 +55,7 @@
 		C9CD1C0C21A1CFF300203AA5 /* OceanAccessHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OceanAccessHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CD1C1021A1CFF300203AA5 /* OceanAccessHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanAccessHelperUITests.swift; sourceTree = "<group>"; };
 		C9CD1C1221A1CFF300203AA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C9CD1C1E21A1D7E300203AA5 /* Archive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Archive.swift; sourceTree = "<group>"; };
+		C9CD1C1E21A1D7E300203AA5 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		C9CD1C2421A1E9CE00203AA5 /* ReportDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsTableViewController.swift; sourceTree = "<group>"; };
 		C9CD1C2821A1EDFC00203AA5 /* OceanAccessHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanAccessHomeViewController.swift; sourceTree = "<group>"; };
 		C9CD1C3621A616E200203AA5 /* CRMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRMC.swift; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				C9CD1BF421A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld */,
-				C9CD1C1E21A1D7E300203AA5 /* Archive.swift */,
+				C9CD1C1E21A1D7E300203AA5 /* Report.swift */,
 				C9CD1C3621A616E200203AA5 /* CRMC.swift */,
 			);
 			path = models;
@@ -304,7 +304,7 @@
 				C9CD1BF621A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld in Sources */,
 				C9CD1BF021A1CFF000203AA5 /* ReportArchiveTableViewController.swift in Sources */,
 				C9CD1C3721A616E200203AA5 /* CRMC.swift in Sources */,
-				C9CD1C1F21A1D7E300203AA5 /* Archive.swift in Sources */,
+				C9CD1C1F21A1D7E300203AA5 /* Report.swift in Sources */,
 				C9CD1BEE21A1CFF000203AA5 /* AppDelegate.swift in Sources */,
 				C9CD1C3C21A657FB00203AA5 /* UIView+Blur.swift in Sources */,
 				C9CD1C2521A1E9CE00203AA5 /* ReportDetailsTableViewController.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ReportDetailsTableViewController: BlurTableViewController, ArchiveManagedContext {
+class ReportDetailsTableViewController: BlurTableViewController, ReportManagedContext {
 
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var crmcCodeTextField: UITextField!
@@ -33,8 +33,8 @@ class ReportDetailsTableViewController: BlurTableViewController, ArchiveManagedC
     
     @IBOutlet weak var commentsTextView: UITextView!
     
-    var managedObjectContext: NSManagedObjectContext? // ArchiveManagedContext
-    var report: Archive?
+    var managedObjectContext: NSManagedObjectContext? // ReportManagedContext
+    var report: Report?
     var crmcCodes = CRMC.allCodes
     
     override func viewDidLoad() {
@@ -58,14 +58,14 @@ class ReportDetailsTableViewController: BlurTableViewController, ArchiveManagedC
     }
     
     
-    func createReport(with context: NSManagedObjectContext) -> Archive? {
+    func createReport(with context: NSManagedObjectContext) -> Report? {
         guard let reporter = reporterNameTextField.text, let location = locationTextField.text, let crmc = crmcCodeTextField.text else {
             print("Failed to create report") // FIXME: Let's add some reasonable error handling here
             return nil
         }
         
         // If we have a report to edit, set it here, else generate a new report
-        let activeReport = report ?? Archive(context: context)
+        let activeReport = report ?? Report(context: context)
         
         activeReport.dateTime = reportDateTimePicker.date
         activeReport.reporterName = reporter
@@ -92,7 +92,7 @@ class ReportDetailsTableViewController: BlurTableViewController, ArchiveManagedC
         return activeReport
     }
     
-    func updateViewForReport(_ report:Archive) {
+    func updateViewForReport(_ report:Report) {
         if let date = report.dateTime {
             reportDateTimePicker.setDate(date, animated: false)
             reporterNameTextField.text = report.reporterName
