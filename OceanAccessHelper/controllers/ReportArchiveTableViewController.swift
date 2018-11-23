@@ -27,7 +27,7 @@ class ReportArchiveTableViewController: BlurTableViewController, ArchiveManagedC
         // dig out the view controller we care about
         var destinationViewController: ReportDetailsTableViewController
         if let navigationController = segue.destination as? UINavigationController {
-            destinationViewController = navigationController.visibleViewController as! ReportDetailsTableViewController // FIXME: Evaluate force downcast here for a better approach
+            destinationViewController = navigationController.visibleViewController as! ReportDetailsTableViewController // FIXME: Evaluate forced downcast here for a better approach
         } else {
             destinationViewController = segue.destination as! ReportDetailsTableViewController
         }
@@ -93,13 +93,7 @@ extension ReportArchiveTableViewController {
         let archive = fetchedResultsController.object(at: indexPath)
         
         cell.textLabel?.text = archive.locationName
-        
-        if let date = archive.dateTime {
-            let dateFormatter = DateFormatter()
-            dateFormatter.setLocalizedDateFormatFromTemplate("MMM d, h:mm a")
-            cell.detailTextLabel?.text = dateFormatter.string(from: date)
-        }
-        
+        cell.detailTextLabel?.text = archive.formattedDateTime
     }
 }
 

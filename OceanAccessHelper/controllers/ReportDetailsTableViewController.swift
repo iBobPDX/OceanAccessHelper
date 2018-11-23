@@ -64,6 +64,7 @@ class ReportDetailsTableViewController: BlurTableViewController, ArchiveManagedC
             return nil
         }
         
+        // If we have a report to edit, set it here, else generate a new report
         let activeReport = report ?? Archive(context: context)
         
         activeReport.dateTime = reportDateTimePicker.date

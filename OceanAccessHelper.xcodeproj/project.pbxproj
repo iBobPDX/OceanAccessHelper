@@ -113,7 +113,7 @@
 			children = (
 				C9CD1C2D21A3022E00203AA5 /* models */,
 				C9CD1C2A21A3020900203AA5 /* controllers */,
-				C9CD1C3A21A657C600203AA5 /* UIKitExtensions */,
+				C9CD1C3A21A657C600203AA5 /* extensions */,
 				C9CD1BED21A1CFF000203AA5 /* AppDelegate.swift */,
 				C9CD1BF121A1CFF000203AA5 /* Main.storyboard */,
 				C9CD1BF721A1CFF300203AA5 /* Assets.xcassets */,
@@ -162,12 +162,12 @@
 			path = models;
 			sourceTree = "<group>";
 		};
-		C9CD1C3A21A657C600203AA5 /* UIKitExtensions */ = {
+		C9CD1C3A21A657C600203AA5 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
 				C9CD1C3B21A657FB00203AA5 /* UIView+Blur.swift */,
 			);
-			path = UIKitExtensions;
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
