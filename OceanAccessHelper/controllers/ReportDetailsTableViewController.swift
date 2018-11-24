@@ -35,7 +35,6 @@ class ReportDetailsTableViewController: BlurTableViewController, ReportManagedCo
     
     var managedObjectContext: NSManagedObjectContext? // ReportManagedContext
     var report: Report?
-    var crmcCodes = CRMC.allCodes
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +53,6 @@ class ReportDetailsTableViewController: BlurTableViewController, ReportManagedCo
         picker.dataSource = self
         
         locationTextField.inputView = picker
-        crmcCodes.insert(("", ""), at: 0) // Putting blank row in data set for picker user experience
     }
     
     
@@ -154,20 +152,38 @@ class ReportDetailsTableViewController: BlurTableViewController, ReportManagedCo
 
 extension ReportDetailsTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return crmcCodes.count
+        if component == 0 {
+            return Municipality.allCases.count
+        } else {
+            let selectedLocation = pickerView.selectedRow(inComponent: 0)
+            return AccessPoint.accessPointsForMunicipalityIndex(selectedLocation).count
+        }
     }
     
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return crmcCodes[row].0
+        if component == 0 {
+            return Municipality.allCases[row].rawValue
+        } else {
+            let selectedLocation = pickerView.selectedRow(inComponent: 0)
+            return AccessPoint.accessPointsForMunicipalityIndex(selectedLocation)[row].0
+        }
     }
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        locationTextField.text = crmcCodes[row].0
-        crmcCodeTextField.text = crmcCodes[row].1
+        if component == 0 {
+            /* Reload location Access Points if location component changed */
+            pickerView.selectRow(0, inComponent: 1, animated: true)
+            pickerView.reloadComponent(1)
+        } else {
+            let selectedLocation = pickerView.selectedRow(inComponent: 0)
+            let codes = AccessPoint.accessPointsForMunicipalityIndex(selectedLocation)
+            locationTextField.text = codes[row].0
+            crmcCodeTextField.text = codes[row].1
+        }
     }
 }

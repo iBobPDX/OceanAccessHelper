@@ -18,7 +18,7 @@
 		C9CD1C1F21A1D7E300203AA5 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C1E21A1D7E300203AA5 /* Report.swift */; };
 		C9CD1C2521A1E9CE00203AA5 /* ReportDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C2421A1E9CE00203AA5 /* ReportDetailsTableViewController.swift */; };
 		C9CD1C2921A1EDFC00203AA5 /* OceanAccessHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C2821A1EDFC00203AA5 /* OceanAccessHomeViewController.swift */; };
-		C9CD1C3721A616E200203AA5 /* CRMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C3621A616E200203AA5 /* CRMC.swift */; };
+		C9CD1C3721A616E200203AA5 /* AccessPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C3621A616E200203AA5 /* AccessPoint.swift */; };
 		C9CD1C3C21A657FB00203AA5 /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C3B21A657FB00203AA5 /* UIView+Blur.swift */; };
 		C9CD1C3E21A6619100203AA5 /* BlurTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C3D21A6619100203AA5 /* BlurTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -58,7 +58,7 @@
 		C9CD1C1E21A1D7E300203AA5 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		C9CD1C2421A1E9CE00203AA5 /* ReportDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsTableViewController.swift; sourceTree = "<group>"; };
 		C9CD1C2821A1EDFC00203AA5 /* OceanAccessHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanAccessHomeViewController.swift; sourceTree = "<group>"; };
-		C9CD1C3621A616E200203AA5 /* CRMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRMC.swift; sourceTree = "<group>"; };
+		C9CD1C3621A616E200203AA5 /* AccessPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessPoint.swift; sourceTree = "<group>"; };
 		C9CD1C3B21A657FB00203AA5 /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
 		C9CD1C3D21A6619100203AA5 /* BlurTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,7 +157,7 @@
 			children = (
 				C9CD1BF421A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld */,
 				C9CD1C1E21A1D7E300203AA5 /* Report.swift */,
-				C9CD1C3621A616E200203AA5 /* CRMC.swift */,
+				C9CD1C3621A616E200203AA5 /* AccessPoint.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -303,7 +303,7 @@
 			files = (
 				C9CD1BF621A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld in Sources */,
 				C9CD1BF021A1CFF000203AA5 /* ReportArchiveTableViewController.swift in Sources */,
-				C9CD1C3721A616E200203AA5 /* CRMC.swift in Sources */,
+				C9CD1C3721A616E200203AA5 /* AccessPoint.swift in Sources */,
 				C9CD1C1F21A1D7E300203AA5 /* Report.swift in Sources */,
 				C9CD1BEE21A1CFF000203AA5 /* AppDelegate.swift in Sources */,
 				C9CD1C3C21A657FB00203AA5 /* UIView+Blur.swift in Sources */,
