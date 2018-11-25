@@ -33,6 +33,7 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
     
     @IBOutlet weak var commentsTextView: UITextView!
     
+    let kDefaultReporterUserDefaultsKey = "defaultReporter"
     var managedObjectContext: NSManagedObjectContext? // ReportManagedContext
     var report: Report?
     
@@ -42,6 +43,8 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
         // If we have an existing report on load then update our view to reflect this report for editing
         if let report = report {
             updateViewForReport(report)
+        } else if let reporter = UserDefaults.standard.string(forKey: kDefaultReporterUserDefaultsKey) {
+            reporterNameTextField.text = reporter
         }
         
         setupCrmcCodePicker()
@@ -67,6 +70,10 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
         
         activeReport.dateTime = reportDateTimePicker.date
         activeReport.reporterName = reporter
+        
+        // Let's go ahead an store this in user defaults for convenience
+        UserDefaults.standard.set(reporter, forKey: kDefaultReporterUserDefaultsKey)
+        
         activeReport.locationName = location
         activeReport.crmcCode = crmc
         
