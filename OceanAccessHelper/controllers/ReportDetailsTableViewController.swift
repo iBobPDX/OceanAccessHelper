@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ReportDetailsTableViewController: BlurTableViewController, ReportManagedContext {
+class ReportDetailsTableViewController: UITableViewController, ReportManagedContext {
 
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var crmcCodeTextField: UITextField!

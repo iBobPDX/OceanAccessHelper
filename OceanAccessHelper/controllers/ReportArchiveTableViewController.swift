@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ReportArchiveTableViewController: BlurTableViewController, ReportManagedContext {
+class ReportArchiveTableViewController: UITableViewController, ReportManagedContext {
     var managedObjectContext: NSManagedObjectContext?
     var selectedReport: Report?
     
