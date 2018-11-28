@@ -10,16 +10,6 @@ import Foundation
 import UIKit
 
 class EmailHTMLBody {
-    static let dateFormatter = DateFormatter()
-    static func dateForReport(_ report: Report) -> String {
-        guard let date = report.dateTime else {
-            return ""
-        }
-        
-        dateFormatter.setLocalizedDateFormatFromTemplate("MMM d, h:mm a")
-        return dateFormatter.string(from: date)
-    }
-    
     static func htmlTableForReport(_ report: Report) -> String {
         let htmlTable =
         """
@@ -47,7 +37,7 @@ class EmailHTMLBody {
                     <tr>
                         <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.locationName ?? "")</td>
                         <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.crmcCode ?? "")</td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(self.dateForReport(report))</td>
+                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.formattedDateTime ?? "")</td>
                         <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.reporterName ?? "")</td>
                     </tr>
                     <tr>
