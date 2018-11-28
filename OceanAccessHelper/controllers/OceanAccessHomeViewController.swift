@@ -16,21 +16,13 @@ class OceanAccessHomeViewController: UIViewController {
     @IBOutlet weak var reportArchiveButton: UIButton!
     
     
-    private let persistentContainer = NSPersistentContainer(name: "OceanAccessHelper")
+    lazy var persistentContainer: NSPersistentContainer = {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Setup CoreData stack
-        persistentContainer.loadPersistentStores { (persistentStoreDescription, error) in
-            if let error = error {
-                print("Unable to Load Persistent Store")
-                print("\(error), \(error.localizedDescription)")
-                
-            } else {
-                //continue
-            }
-        }
         
         configureButtons()
     }
