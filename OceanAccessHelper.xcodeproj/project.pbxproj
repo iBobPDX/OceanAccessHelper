@@ -21,6 +21,7 @@
 		C9CD1C3721A616E200203AA5 /* AccessPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C3621A616E200203AA5 /* AccessPoint.swift */; };
 		C9CD1C3C21A657FB00203AA5 /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C3B21A657FB00203AA5 /* UIView+Blur.swift */; };
 		C9CD1C3E21A6619100203AA5 /* BlurTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1C3D21A6619100203AA5 /* BlurTableViewController.swift */; };
+		C9D9D94321AF2B48002E1E07 /* EmailHTMLBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9D94221AF2B48002E1E07 /* EmailHTMLBody.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		C9CD1C3621A616E200203AA5 /* AccessPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessPoint.swift; sourceTree = "<group>"; };
 		C9CD1C3B21A657FB00203AA5 /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
 		C9CD1C3D21A6619100203AA5 /* BlurTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurTableViewController.swift; sourceTree = "<group>"; };
+		C9D9D94221AF2B48002E1E07 /* EmailHTMLBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailHTMLBody.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				C9CD1BF421A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld */,
 				C9CD1C1E21A1D7E300203AA5 /* Report.swift */,
 				C9CD1C3621A616E200203AA5 /* AccessPoint.swift */,
+				C9D9D94221AF2B48002E1E07 /* EmailHTMLBody.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				C9CD1BEE21A1CFF000203AA5 /* AppDelegate.swift in Sources */,
 				C9CD1C3C21A657FB00203AA5 /* UIView+Blur.swift in Sources */,
 				C9CD1C2521A1E9CE00203AA5 /* ReportDetailsTableViewController.swift in Sources */,
+				C9D9D94321AF2B48002E1E07 /* EmailHTMLBody.swift in Sources */,
 				C9CD1C2921A1EDFC00203AA5 /* OceanAccessHomeViewController.swift in Sources */,
 				C9CD1C3E21A6619100203AA5 /* BlurTableViewController.swift in Sources */,
 			);

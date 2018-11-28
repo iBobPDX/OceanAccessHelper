@@ -72,10 +72,9 @@ class ReportArchiveTableViewController: UITableViewController, ReportManagedCont
         if let location = report.locationName {
             let mailController = MFMailComposeViewController.init()
             mailController.mailComposeDelegate = self
-            
             mailController.setSubject("Access Report for \(location)")
             mailController.setToRecipients(["corlett.robert@gmail.com"])
-            mailController.setMessageBody("\(report.description)", isHTML: false)
+            mailController.setMessageBody(EmailHTMLBody.htmlTableForReport(report), isHTML: true)
             
             self.present(mailController, animated: true, completion: completion)
         }
