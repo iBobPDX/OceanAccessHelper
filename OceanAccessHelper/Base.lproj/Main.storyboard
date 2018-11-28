@@ -350,7 +350,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CRMC Right-of-Way Sign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0j2-jl-wuQ">
-                                                    <rect key="frame" x="8" y="16" width="200" height="23.5"/>
+                                                    <rect key="frame" x="8" y="16" width="200" height="22.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="cCE-Uu-DyW"/>
                                                     </constraints>
@@ -359,7 +359,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SEz-RW-7HA">
-                                                    <rect key="frame" x="309" y="8" width="52" height="39.5"/>
+                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="qfz-IS-k4M"/>
                                                     </constraints>
@@ -384,7 +384,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COA Adoption Sign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQx-a4-TXa">
-                                                    <rect key="frame" x="8" y="16" width="200" height="23.5"/>
+                                                    <rect key="frame" x="8" y="16" width="200" height="22.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="yLi-P2-26D"/>
                                                     </constraints>
@@ -393,7 +393,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EIf-6a-n6C">
-                                                    <rect key="frame" x="309" y="8" width="52" height="39.5"/>
+                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="0D0-hg-Vua"/>
                                                     </constraints>
@@ -418,13 +418,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZyN-Ey-qxb">
-                                                    <rect key="frame" x="309" y="8" width="52" height="39.5"/>
+                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="ZnJ-3k-k5E"/>
                                                     </constraints>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Obstruction to Right-of-Way" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TQ-oD-f0a">
-                                                    <rect key="frame" x="8" y="8" width="250" height="39.5"/>
+                                                    <rect key="frame" x="8" y="8" width="250" height="38.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="pcr-dM-Aqm"/>
                                                     </constraints>
@@ -452,7 +452,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Encroachment to Pathway" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40K-KE-X1s">
-                                                    <rect key="frame" x="8" y="8" width="250" height="39.5"/>
+                                                    <rect key="frame" x="8" y="8" width="250" height="38.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="PXV-KN-M5p"/>
                                                     </constraints>
@@ -461,7 +461,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DHz-zQ-izP">
-                                                    <rect key="frame" x="309" y="8" width="52" height="39.5"/>
+                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="WV7-09-Zkv"/>
                                                     </constraints>
@@ -486,7 +486,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Encroachment to Shoreline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfy-H5-0qm">
-                                                    <rect key="frame" x="8" y="8" width="250" height="39.5"/>
+                                                    <rect key="frame" x="8" y="8" width="250" height="38.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="gbc-Ea-3ym"/>
                                                     </constraints>
@@ -495,7 +495,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tXL-J7-VIn">
-                                                    <rect key="frame" x="309" y="8" width="52" height="39.5"/>
+                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="Zyp-Mu-5lt"/>
                                                     </constraints>
@@ -520,7 +520,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Able to Access Water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n30-Ga-hHH">
-                                                    <rect key="frame" x="8" y="16" width="250" height="23.5"/>
+                                                    <rect key="frame" x="8" y="16" width="250" height="22.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Iwf-Vo-Xic"/>
                                                     </constraints>
@@ -529,7 +529,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="T0I-mw-Vjn">
-                                                    <rect key="frame" x="309" y="8" width="52" height="39.5"/>
+                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="8Kc-h2-lz0"/>
                                                     </constraints>
@@ -554,7 +554,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZK-8t-nKl">
-                                                    <rect key="frame" x="8" y="16" width="200" height="23.5"/>
+                                                    <rect key="frame" x="8" y="16" width="200" height="22.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="zzQ-0c-e28"/>
                                                     </constraints>
@@ -563,7 +563,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fEf-X3-g0a">
-                                                    <rect key="frame" x="309" y="8" width="52" height="39.5"/>
+                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="rt5-PR-le9"/>
                                                     </constraints>
@@ -588,7 +588,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free from Vandalism" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUc-4m-TZ7">
-                                                    <rect key="frame" x="8" y="16" width="200" height="23.5"/>
+                                                    <rect key="frame" x="8" y="16" width="200" height="22.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="XI6-gL-bVQ"/>
                                                     </constraints>
@@ -597,7 +597,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pSF-ba-Z1M">
-                                                    <rect key="frame" x="309" y="8" width="52" height="39.5"/>
+                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="jRb-MG-EZR"/>
                                                     </constraints>
@@ -622,7 +622,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free from Marine Debris and Litter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYH-hM-jKk">
-                                                    <rect key="frame" x="8" y="8" width="262" height="39.5"/>
+                                                    <rect key="frame" x="8" y="8" width="262" height="38.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="262" id="19O-gN-9pN"/>
                                                     </constraints>
@@ -631,7 +631,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qPx-3n-0mT">
-                                                    <rect key="frame" x="309" y="8" width="52" height="39.5"/>
+                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="qew-UD-zdw"/>
                                                     </constraints>

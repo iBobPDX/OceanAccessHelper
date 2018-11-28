@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import MessageUI
 
 class ReportArchiveTableViewController: UITableViewController, ReportManagedContext {
     var managedObjectContext: NSManagedObjectContext?
@@ -63,11 +64,28 @@ class ReportArchiveTableViewController: UITableViewController, ReportManagedCont
         return fetchedResultsController
     }()
     
+    func presentMailControllerForReport(_ report: Report, completion: (() -> Void)? = nil) {
+        guard MFMailComposeViewController.canSendMail() else {
+            // FIXME: Notify user that they need to configure mail
+            return
+        }
+        if let location = report.locationName {
+            let mailController = MFMailComposeViewController.init()
+            mailController.mailComposeDelegate = self
+            
+            mailController.setSubject("Access Report for \(location)")
+            mailController.setToRecipients(["corlett.robert@gmail.com"])
+            mailController.setMessageBody("\(report.description)", isHTML: false)
+            
+            self.present(mailController, animated: true, completion: completion)
+        }
+        
+    }
     
 
 }
 
-// MARK - UITableViewDelegate
+// MARK: - UITableViewDelegate
 extension ReportArchiveTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedReport = fetchedResultsController.object(at: indexPath)
@@ -75,7 +93,7 @@ extension ReportArchiveTableViewController {
     }
 }
 
-// MARK - UITableViewDataSource
+// MARK: - UITableViewDataSource
 extension ReportArchiveTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let reports = fetchedResultsController.fetchedObjects else { return 0 }
@@ -94,6 +112,26 @@ extension ReportArchiveTableViewController {
         
         cell.textLabel?.text = report.locationName
         cell.detailTextLabel?.text = report.formattedDateTime
+        cell.accessoryType = report.submitted ? .checkmark : .none
+    }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let action = UIContextualAction.init(style: .normal, title: "Export") { [weak self] (action, view, completion) in
+            let report = self?.fetchedResultsController.object(at: indexPath)
+            if let report = report {
+                self?.presentMailControllerForReport(report) { [weak self] in
+                    self?.selectedReport = report
+                    self?.tableView.setEditing(false, animated: true)
+                }
+            }
+        }
+        action.backgroundColor = UIColor.init(red: 69.0/255.0, green: 105.0/255.0, blue: 154.0/255.0, alpha: 1.0)
+        
+        
+        let config = UISwipeActionsConfiguration.init(actions:[action])
+        
+        return config
     }
 }
 
@@ -125,6 +163,18 @@ extension ReportArchiveTableViewController: NSFetchedResultsControllerDelegate {
                 }
                 break;
         }
+    }
+}
+
+extension ReportArchiveTableViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if let error = error {
+            print("Error: \(error.localizedDescription)")
+        } else if result == .sent {
+            self.selectedReport?.submitted = true
+        }
+        
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 

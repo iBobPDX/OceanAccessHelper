@@ -83,12 +83,12 @@ class OceanAccessHomeViewController: UIViewController {
 
 }
 
-// MARK - ReportManagedContext
+// MARK: - ReportManagedContext
 protocol ReportManagedContext {
     var managedObjectContext: NSManagedObjectContext? { get set }
 }
 
-// MARK - Parallax
+// MARK: - Parallax
 func addParallaxToView(_ view: UIView) {
     let amount = 100
     

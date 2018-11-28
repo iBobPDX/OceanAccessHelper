@@ -125,7 +125,7 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
     
     
 
-    // MARK - IBActions
+    // MARK: - IBActions
     @IBAction func cancelToOeanAccessHome(_ segue: UIStoryboardSegue) {
         close(true, nil)
     }
