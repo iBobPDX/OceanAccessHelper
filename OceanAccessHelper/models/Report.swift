@@ -21,4 +21,8 @@ extension Report {
         
         return formattedDate
     }
+    
+    enum SortDescriptors {
+        static let DateTime = "dateTime"
+    }
 }

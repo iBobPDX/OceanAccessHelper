@@ -16,7 +16,7 @@ class OceanAccessHomeViewController: UIViewController {
     @IBOutlet weak var reportArchiveButton: UIButton!
     
     
-    lazy var persistentContainer: NSPersistentContainer = {
+    var persistentContainer: NSPersistentContainer = {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer
     }()
@@ -30,13 +30,10 @@ class OceanAccessHomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let image = UIImage(named: "coa-background") {
+        if let image = UIImage(named: Assets.OceanBackground) {
             self.backgroundImageView.image = image
             self.backgroundImageView.contentMode = .scaleAspectFill
-//            addParallaxToView(self.backgroundImageView)
         }
-        
-//        animateButtonIntroduction() // Might play with animating these guys in?
     }
     
     func configureButtons() {
@@ -48,51 +45,25 @@ class OceanAccessHomeViewController: UIViewController {
         newReportButton?.addBlur(at: 0, style: .regular)
         reportArchiveButton?.addBlur(at: 0, style: .regular)
     }
-    
-    func animateButtonIntroduction() {
-        UIView.animate(withDuration: 2.0, delay: 1.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
-        }, completion: nil)
-    }
-    
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
+        var destinationViewController: ReportManagedContextable
         
-        // dig out the view controller we care about
-        var destinationViewController: ReportManagedContext
-        if let navigationController = segue.destination as? UINavigationController {
-            destinationViewController = navigationController.visibleViewController as! ReportManagedContext // FIXME: Evaluate force downcast here for a better approach
-        } else {
-            destinationViewController = segue.destination as! ReportManagedContext
+        if let navigationController = segue.destination as? UINavigationController, let visibleViewController = navigationController.viewControllers.first as? ReportManagedContextable {
+            destinationViewController = visibleViewController
+            destinationViewController.managedObjectContext = persistentContainer.viewContext
+        } else if let destination = segue.destination as? ReportManagedContextable {
+            destinationViewController = destination
+            destinationViewController.managedObjectContext = persistentContainer.viewContext
         }
-        
-        // Configure View Controller
-        destinationViewController.managedObjectContext = persistentContainer.viewContext
     }
  
     
 
 }
 
-// MARK: - ReportManagedContext
-protocol ReportManagedContext {
+// MARK: - ReportManagedContextable
+protocol ReportManagedContextable {
     var managedObjectContext: NSManagedObjectContext? { get set }
-}
-
-// MARK: - Parallax
-func addParallaxToView(_ view: UIView) {
-    let amount = 100
-    
-    let horizontal = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
-    horizontal.minimumRelativeValue = -amount
-    horizontal.maximumRelativeValue = amount
-    
-    let vertical = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
-    vertical.minimumRelativeValue = -amount
-    vertical.maximumRelativeValue = amount
-    
-    let group = UIMotionEffectGroup()
-    group.motionEffects = [horizontal, vertical]
-    view.addMotionEffect(group)
 }

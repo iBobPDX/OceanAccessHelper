@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import MessageUI
 
-class ReportArchiveTableViewController: UITableViewController, ReportManagedContext {
+class ReportArchiveTableViewController: UITableViewController, ReportManagedContextable {
     var managedObjectContext: NSManagedObjectContext?
     var selectedReport: Report?
     
@@ -53,7 +53,7 @@ class ReportArchiveTableViewController: UITableViewController, ReportManagedCont
         let fetchRequest: NSFetchRequest<Report> = Report.fetchRequest()
         
         // Configure Fetch Request
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateTime", ascending: false)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: Report.SortDescriptors.DateTime, ascending: false)]
         
         // Create Fetched Results Controller
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
@@ -100,7 +100,7 @@ extension ReportArchiveTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ArchiveCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.ArchiveCell, for: indexPath)
         configure(cell, at: indexPath)
         
         return cell
@@ -116,7 +116,7 @@ extension ReportArchiveTableViewController {
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let action = UIContextualAction.init(style: .normal, title: "Export") { [weak self] (action, view, completion) in
+        let action = UIContextualAction.init(style: .normal, title: ActionTitles.Export) { [weak self] (action, view, completion) in
             let report = self?.fetchedResultsController.object(at: indexPath)
             if let report = report {
                 self?.presentMailControllerForReport(report) { [weak self] in
@@ -174,6 +174,15 @@ extension ReportArchiveTableViewController: MFMailComposeViewControllerDelegate 
         }
         
         controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ReportArchiveTableViewController {
+    enum CellIdentifiers {
+        static let ArchiveCell = "ArchiveCell"
+    }
+    enum ActionTitles {
+        static let Export = "Export"
     }
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ReportDetailsTableViewController: UITableViewController, ReportManagedContext {
+class ReportDetailsTableViewController: UITableViewController, ReportManagedContextable {
 
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var crmcCodeTextField: UITextField!
@@ -33,7 +33,6 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
     
     @IBOutlet weak var commentsTextView: UITextView!
     
-    let kDefaultReporterUserDefaultsKey = "defaultReporter"
     var managedObjectContext: NSManagedObjectContext? // ReportManagedContext
     var report: Report?
     
@@ -43,7 +42,7 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
         // If we have an existing report on load then update our view to reflect this report for editing
         if let report = report {
             updateViewForReport(report)
-        } else if let reporter = UserDefaults.standard.string(forKey: kDefaultReporterUserDefaultsKey) {
+        } else if let reporter = UserDefaults.standard.string(forKey: UserDefaults.Keys.DefaultReporter) {
             reporterNameTextField.text = reporter
         }
         
@@ -72,7 +71,7 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
         activeReport.reporterName = reporter
         
         // Let's go ahead an store this in user defaults for convenience
-        UserDefaults.standard.set(reporter, forKey: kDefaultReporterUserDefaultsKey)
+        UserDefaults.standard.set(reporter, forKey: UserDefaults.Keys.DefaultReporter)
         
         activeReport.locationName = location
         activeReport.crmcCode = crmc
