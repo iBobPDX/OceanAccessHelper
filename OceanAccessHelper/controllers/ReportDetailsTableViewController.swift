@@ -34,11 +34,18 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
     
     @IBOutlet weak var commentsTextView: UITextView!
     
+    private var photos: [UIImage] = [UIImage(),UIImage(),UIImage(),UIImage(),UIImage(),UIImage(),UIImage(),]
+    @IBOutlet weak var photosCollectionView: UICollectionView!
+    
+    
     var managedObjectContext: NSManagedObjectContext? // ReportManagedContext
     var report: Report?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        photosCollectionView.register(UINib(nibName:"PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"Photo Cell")
+
         
         // If we have an existing report on load then update our view to reflect this report for editing
         if let report = report {
@@ -169,6 +176,26 @@ extension ReportDetailsTableViewController {
         }
         
     }
+}
+
+extension ReportDetailsTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photos.count + 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Photo Cell", for: indexPath)
+        if let cell = cell as? PhotoCollectionViewCell {
+            if photos.count > indexPath.row {
+                cell.imageView.image = photos[indexPath.row]
+                cell.backgroundColor = .red
+            } else {
+                cell.backgroundColor = .blue
+            }
+        }
+        return cell
+    }
+    
 }
 
 extension ReportDetailsTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {

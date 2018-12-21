@@ -10,6 +10,8 @@
 		C927803621B32D3A008329CA /* UIImage+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927803521B32D3A008329CA /* UIImage+Assets.swift */; };
 		C927803821B3300C008329CA /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927803721B3300C008329CA /* UserDefaults+Keys.swift */; };
 		C97E49BD21CD6CE90090015C /* ApprovalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E49BC21CD6CE90090015C /* ApprovalTableViewCell.swift */; };
+		C97E49C621CD82AE0090015C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E49C421CD82AE0090015C /* PhotoCollectionViewCell.swift */; };
+		C97E49C721CD82AE0090015C /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97E49C521CD82AE0090015C /* PhotoCollectionViewCell.xib */; };
 		C9CD1BEE21A1CFF000203AA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1BED21A1CFF000203AA5 /* AppDelegate.swift */; };
 		C9CD1BF021A1CFF000203AA5 /* ReportArchiveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1BEF21A1CFF000203AA5 /* ReportArchiveTableViewController.swift */; };
 		C9CD1BF321A1CFF000203AA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD1BF121A1CFF000203AA5 /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 		C927803521B32D3A008329CA /* UIImage+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Assets.swift"; sourceTree = "<group>"; };
 		C927803721B3300C008329CA /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
 		C97E49BC21CD6CE90090015C /* ApprovalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalTableViewCell.swift; sourceTree = "<group>"; };
+		C97E49C421CD82AE0090015C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		C97E49C521CD82AE0090015C /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		C9CD1BEA21A1CFF000203AA5 /* OceanAccessHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OceanAccessHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CD1BED21A1CFF000203AA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9CD1BEF21A1CFF000203AA5 /* ReportArchiveTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportArchiveTableViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				C97E49BC21CD6CE90090015C /* ApprovalTableViewCell.swift */,
+				C97E49C421CD82AE0090015C /* PhotoCollectionViewCell.swift */,
+				C97E49C521CD82AE0090015C /* PhotoCollectionViewCell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -292,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9CD1BFB21A1CFF300203AA5 /* LaunchScreen.storyboard in Resources */,
+				C97E49C721CD82AE0090015C /* PhotoCollectionViewCell.xib in Resources */,
 				C9CD1BF821A1CFF300203AA5 /* Assets.xcassets in Resources */,
 				C9CD1BF321A1CFF000203AA5 /* Main.storyboard in Resources */,
 			);
@@ -328,6 +335,7 @@
 				C927803621B32D3A008329CA /* UIImage+Assets.swift in Sources */,
 				C9CD1C2521A1E9CE00203AA5 /* ReportDetailsTableViewController.swift in Sources */,
 				C9D9D94321AF2B48002E1E07 /* EmailHTMLBody.swift in Sources */,
+				C97E49C621CD82AE0090015C /* PhotoCollectionViewCell.swift in Sources */,
 				C97E49BD21CD6CE90090015C /* ApprovalTableViewCell.swift in Sources */,
 				C9CD1C2921A1EDFC00203AA5 /* OceanAccessHomeViewController.swift in Sources */,
 			);
