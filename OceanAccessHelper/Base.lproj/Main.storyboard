@@ -342,24 +342,21 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Approvals" id="vHn-Sx-7P5">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="fXL-mC-A6a">
-                                        <rect key="frame" x="0.0" y="615.5" width="375" height="55"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="fXL-mC-A6a" customClass="ApprovalTableViewCell" customModule="OceanAccessHelper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="615.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fXL-mC-A6a" id="yom-EG-Oev">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CRMC Right-of-Way Sign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0j2-jl-wuQ">
-                                                    <rect key="frame" x="8" y="16" width="200" height="22.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="cCE-Uu-DyW"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="CRMC Right-of-Way Sign" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0j2-jl-wuQ">
+                                                    <rect key="frame" x="8" y="16" width="193.5" height="11.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SEz-RW-7HA">
-                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
+                                                    <rect key="frame" x="269" y="8" width="52" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="qfz-IS-k4M"/>
                                                     </constraints>
@@ -375,25 +372,27 @@
                                                 <constraint firstItem="SEz-RW-7HA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0j2-jl-wuQ" secondAttribute="trailing" constant="16" id="qVJ-8N-lav"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailDisclosureMessage">
+                                                <string key="value">Right-of-way signs should be present at every access point. If they are faded, not present, or something changes, please take picture and send with report.</string>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="jee-iY-5Jm">
-                                        <rect key="frame" x="0.0" y="670.5" width="375" height="55"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="jee-iY-5Jm" customClass="ApprovalTableViewCell" customModule="OceanAccessHelper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="659.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jee-iY-5Jm" id="bdc-7U-c7t">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COA Adoption Sign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQx-a4-TXa">
-                                                    <rect key="frame" x="8" y="16" width="200" height="22.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="yLi-P2-26D"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="COA Adoption Sign" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQx-a4-TXa">
+                                                    <rect key="frame" x="8" y="16" width="147" height="11.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EIf-6a-n6C">
-                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
+                                                    <rect key="frame" x="269" y="8" width="52" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="0D0-hg-Vua"/>
                                                     </constraints>
@@ -409,25 +408,27 @@
                                                 <constraint firstItem="EIf-6a-n6C" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JQx-a4-TXa" secondAttribute="trailing" constant="16" id="mNE-lw-fNV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailDisclosureMessage">
+                                                <string key="value">These signs are identified with the COA wave logo. These should be located at all Newport locations and soon to be at 6 Middletown locations. Disregard for Portsmouth locations. If these are faded, not present, or something changes (signs get added), please take picture and send with report.</string>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="Jnk-BN-IBP">
-                                        <rect key="frame" x="0.0" y="725.5" width="375" height="55"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="Jnk-BN-IBP" customClass="ApprovalTableViewCell" customModule="OceanAccessHelper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="703.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jnk-BN-IBP" id="X1S-cV-5yF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZyN-Ey-qxb">
-                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
+                                                    <rect key="frame" x="269" y="8" width="52" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="ZnJ-3k-k5E"/>
                                                     </constraints>
                                                 </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Obstruction to Right-of-Way" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TQ-oD-f0a">
-                                                    <rect key="frame" x="8" y="8" width="250" height="38.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="pcr-dM-Aqm"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="No Obstruction to Right-of-Way" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TQ-oD-f0a">
+                                                    <rect key="frame" x="8" y="8" width="243" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -443,25 +444,27 @@
                                                 <constraint firstAttribute="bottom" secondItem="ZyN-Ey-qxb" secondAttribute="bottom" constant="8" id="zzK-hu-GzD"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailDisclosureMessage">
+                                                <string key="value">Are there any obstructions to the access site limiting access, such as overgrown vegetation, fences, large debris items? If there’s obstruction, please take picture and send with report.</string>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="xGA-Ae-zLH">
-                                        <rect key="frame" x="0.0" y="780.5" width="375" height="55"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="xGA-Ae-zLH" customClass="ApprovalTableViewCell" customModule="OceanAccessHelper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="747.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xGA-Ae-zLH" id="TUW-oI-Nr8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Encroachment to Pathway" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40K-KE-X1s">
-                                                    <rect key="frame" x="8" y="8" width="250" height="38.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="PXV-KN-M5p"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="No Encroachment to Pathway" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40K-KE-X1s">
+                                                    <rect key="frame" x="8" y="8" width="225.5" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DHz-zQ-izP">
-                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
+                                                    <rect key="frame" x="269" y="8" width="52" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="WV7-09-Zkv"/>
                                                     </constraints>
@@ -477,25 +480,27 @@
                                                 <constraint firstItem="DHz-zQ-izP" firstAttribute="top" secondItem="TUW-oI-Nr8" secondAttribute="top" constant="8" id="ngO-s9-lFA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailDisclosureMessage">
+                                                <string key="value">Is the ROW pathway or shoreline getting smaller, are the surrounding properties intruding on the ROW? If there’s encroachment, please take picture and send with report.</string>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="x2P-ci-5tD">
-                                        <rect key="frame" x="0.0" y="835.5" width="375" height="55"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="x2P-ci-5tD" customClass="ApprovalTableViewCell" customModule="OceanAccessHelper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="791.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x2P-ci-5tD" id="JFn-k7-6I1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Encroachment to Shoreline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfy-H5-0qm">
-                                                    <rect key="frame" x="8" y="8" width="250" height="38.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="gbc-Ea-3ym"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="No Encroachment to Shoreline" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfy-H5-0qm">
+                                                    <rect key="frame" x="8" y="8" width="233" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tXL-J7-VIn">
-                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
+                                                    <rect key="frame" x="269" y="8" width="52" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="Zyp-Mu-5lt"/>
                                                     </constraints>
@@ -511,25 +516,27 @@
                                                 <constraint firstAttribute="bottom" secondItem="tXL-J7-VIn" secondAttribute="bottom" constant="8" id="sdH-pU-BYU"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailDisclosureMessage">
+                                                <string key="value">Is there any encroachment to the shoreline such as fences, equipment, etc. If so, please take a picture and send with your report.</string>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="VIA-SZ-tAb">
-                                        <rect key="frame" x="0.0" y="890.5" width="375" height="55"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="VIA-SZ-tAb" customClass="ApprovalTableViewCell" customModule="OceanAccessHelper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="835.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VIA-SZ-tAb" id="04m-cl-1jD">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Able to Access Water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n30-Ga-hHH">
-                                                    <rect key="frame" x="8" y="16" width="250" height="22.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Iwf-Vo-Xic"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Able to Access Water" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n30-Ga-hHH">
+                                                    <rect key="frame" x="8" y="16" width="163.5" height="11.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="T0I-mw-Vjn">
-                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
+                                                    <rect key="frame" x="269" y="8" width="52" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="8Kc-h2-lz0"/>
                                                     </constraints>
@@ -545,25 +552,25 @@
                                                 <constraint firstItem="n30-Ga-hHH" firstAttribute="top" secondItem="04m-cl-1jD" secondAttribute="topMargin" constant="8" id="otu-KS-wFy"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailDisclosureMessage" value="If accessing the water from the access point is not possible, please explain why (i.e. fence, wall, large drop-off, rocks)"/>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="HBj-LC-7T4">
-                                        <rect key="frame" x="0.0" y="945.5" width="375" height="55"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="HBj-LC-7T4" customClass="ApprovalTableViewCell" customModule="OceanAccessHelper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="879.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HBj-LC-7T4" id="H1N-9R-xCz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZK-8t-nKl">
-                                                    <rect key="frame" x="8" y="16" width="200" height="22.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="zzQ-0c-e28"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Parking Available" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZK-8t-nKl">
+                                                    <rect key="frame" x="8" y="16" width="129.5" height="11.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fEf-X3-g0a">
-                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
+                                                    <rect key="frame" x="269" y="8" width="52" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="rt5-PR-le9"/>
                                                     </constraints>
@@ -579,25 +586,25 @@
                                                 <constraint firstItem="fEf-X3-g0a" firstAttribute="top" secondItem="H1N-9R-xCz" secondAttribute="top" constant="8" id="iGK-nW-Ngr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailDisclosureMessage" value="Are there spots to park your car nearby without disobeying signage?"/>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="OfM-vA-lfw">
-                                        <rect key="frame" x="0.0" y="1000.5" width="375" height="55"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="OfM-vA-lfw" customClass="ApprovalTableViewCell" customModule="OceanAccessHelper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="923.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OfM-vA-lfw" id="dU9-Yj-TcO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free from Vandalism" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUc-4m-TZ7">
-                                                    <rect key="frame" x="8" y="16" width="200" height="22.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="XI6-gL-bVQ"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Free from Vandalism" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUc-4m-TZ7">
+                                                    <rect key="frame" x="8" y="16" width="157" height="11.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pSF-ba-Z1M">
-                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
+                                                    <rect key="frame" x="269" y="8" width="52" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="jRb-MG-EZR"/>
                                                     </constraints>
@@ -613,25 +620,27 @@
                                                 <constraint firstAttribute="trailing" secondItem="pSF-ba-Z1M" secondAttribute="trailing" constant="16" id="z2q-tb-hY1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailDisclosureMessage">
+                                                <string key="value">Is there any recent vandalism, such as graffiti, illegal signs, compared to your last visit? If there is any vandalism, please take picture and send with report.</string>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="5p5-sw-1LN">
-                                        <rect key="frame" x="0.0" y="1055.5" width="375" height="55"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="5p5-sw-1LN" customClass="ApprovalTableViewCell" customModule="OceanAccessHelper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="967.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5p5-sw-1LN" id="Yne-E7-veR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free from Marine Debris and Litter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYH-hM-jKk">
-                                                    <rect key="frame" x="8" y="8" width="262" height="38.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="262" id="19O-gN-9pN"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Free from Marine Debris and Litter" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYH-hM-jKk">
+                                                    <rect key="frame" x="8" y="8" width="189.5" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qPx-3n-0mT">
-                                                    <rect key="frame" x="309" y="8" width="52" height="38.5"/>
+                                                    <rect key="frame" x="269" y="8" width="52" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="qew-UD-zdw"/>
                                                     </constraints>
@@ -647,13 +656,18 @@
                                                 <constraint firstAttribute="bottom" secondItem="mYH-hM-jKk" secondAttribute="bottom" constant="8" id="kdT-b8-qPv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailDisclosureMessage">
+                                                <string key="value">For this report, we are not looking for a detailed description of the trash at the ROW but stating whether there is trash present is important.</string>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Comments" id="nlL-DH-bR5">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="Lgz-zF-ltd">
-                                        <rect key="frame" x="0.0" y="1166.5" width="375" height="250"/>
+                                        <rect key="frame" x="0.0" y="1067.5" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lgz-zF-ltd" id="yiC-Rg-OEx">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>

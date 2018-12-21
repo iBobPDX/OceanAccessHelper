@@ -14,6 +14,7 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var crmcCodeTextField: UITextField!
     @IBOutlet weak var reporterNameTextField: UITextField!
+    
     @IBOutlet weak var reportDateTimePicker: UIDatePicker!
     
     @IBOutlet weak var peopleWalkersCountTextfield: UITextField!
@@ -126,7 +127,7 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
 
     // MARK: - IBActions
     @IBAction func cancelToOeanAccessHome(_ segue: UIStoryboardSegue) {
-        close(true, nil)
+        close(true)
     }
     
     @IBAction func saveReportDetails(_ segue: UIStoryboardSegue) {
@@ -142,17 +143,31 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
                 print("Failed saving")
             }
             
-            close(true, nil)
+            close(true)
         }
     }
     
     // currently assumes modal presentation, might want to write UIViewController extension to determine if VC has been pushed or modally presented
-    func close(_ animated: Bool, _ completion:(() -> Void)?) {
+    func close(_ animated: Bool) {
         if let nvc = navigationController {
             nvc.dismiss(animated: animated)
         } else {
-            dismiss(animated: animated, completion: completion)
+            dismiss(animated: animated, completion: nil)
         }
+    }
+}
+
+// MARK: UITableViewDelegate
+extension ReportDetailsTableViewController {
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        /* For now lets just display an alert with the approval instructions */
+        if let cell = tableView.cellForRow(at: indexPath) as? DetailDisclosable, let message = cell.detailDisclosureMessage {
+            let alertController = UIAlertController.init(title: "More Information", message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction.init(title: "OK", style: .default)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
     }
 }
 

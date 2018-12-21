@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C927803621B32D3A008329CA /* UIImage+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927803521B32D3A008329CA /* UIImage+Assets.swift */; };
 		C927803821B3300C008329CA /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927803721B3300C008329CA /* UserDefaults+Keys.swift */; };
+		C97E49BD21CD6CE90090015C /* ApprovalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E49BC21CD6CE90090015C /* ApprovalTableViewCell.swift */; };
 		C9CD1BEE21A1CFF000203AA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1BED21A1CFF000203AA5 /* AppDelegate.swift */; };
 		C9CD1BF021A1CFF000203AA5 /* ReportArchiveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD1BEF21A1CFF000203AA5 /* ReportArchiveTableViewController.swift */; };
 		C9CD1BF321A1CFF000203AA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD1BF121A1CFF000203AA5 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		C927803521B32D3A008329CA /* UIImage+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Assets.swift"; sourceTree = "<group>"; };
 		C927803721B3300C008329CA /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
+		C97E49BC21CD6CE90090015C /* ApprovalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalTableViewCell.swift; sourceTree = "<group>"; };
 		C9CD1BEA21A1CFF000203AA5 /* OceanAccessHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OceanAccessHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CD1BED21A1CFF000203AA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9CD1BEF21A1CFF000203AA5 /* ReportArchiveTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportArchiveTableViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C97E49BB21CD6CCF0090015C /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C97E49BC21CD6CE90090015C /* ApprovalTableViewCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		C9CD1BE121A1CFF000203AA5 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +128,7 @@
 				C9CD1C2D21A3022E00203AA5 /* models */,
 				C9CD1C2A21A3020900203AA5 /* controllers */,
 				C9CD1C3A21A657C600203AA5 /* extensions */,
+				C97E49BB21CD6CCF0090015C /* views */,
 				C9CD1BED21A1CFF000203AA5 /* AppDelegate.swift */,
 				C9CD1BF121A1CFF000203AA5 /* Main.storyboard */,
 				C9CD1BF721A1CFF300203AA5 /* Assets.xcassets */,
@@ -317,6 +328,7 @@
 				C927803621B32D3A008329CA /* UIImage+Assets.swift in Sources */,
 				C9CD1C2521A1E9CE00203AA5 /* ReportDetailsTableViewController.swift in Sources */,
 				C9D9D94321AF2B48002E1E07 /* EmailHTMLBody.swift in Sources */,
+				C97E49BD21CD6CE90090015C /* ApprovalTableViewCell.swift in Sources */,
 				C9CD1C2921A1EDFC00203AA5 /* OceanAccessHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
