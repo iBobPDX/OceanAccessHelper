@@ -34,7 +34,11 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
     
     @IBOutlet weak var commentsTextView: UITextView!
     
-    private var photos: [UIImage] = [UIImage(),UIImage(),UIImage(),UIImage(),UIImage(),UIImage(),UIImage(),]
+    private var photos: [UIImage] = [] {
+        didSet {
+            photosCollectionView.reloadData()
+        }
+    }
     @IBOutlet weak var photosCollectionView: UICollectionView!
     
     
@@ -178,6 +182,19 @@ extension ReportDetailsTableViewController {
     }
 }
 
+extension ReportDetailsTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            photos.append(image)
+            if picker.sourceType == .camera {
+                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil) // save image to library
+            }
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+}
+
 extension ReportDetailsTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count + 1
@@ -186,6 +203,9 @@ extension ReportDetailsTableViewController: UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Photo Cell", for: indexPath)
         if let cell = cell as? PhotoCollectionViewCell {
+            cell.imageView.image = nil // reset cell for reuse
+            cell.backgroundColor = nil // reset cell for reuse
+            
             if photos.count > indexPath.row {
                 cell.imageView.image = photos[indexPath.row]
                 cell.backgroundColor = .red
@@ -194,6 +214,54 @@ extension ReportDetailsTableViewController: UICollectionViewDelegate, UICollecti
             }
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == photos.count {
+            addImage()
+        } else {
+            deleteImageAtIndexPath(indexPath)
+        }
+        
+    }
+    
+    func deleteImageAtIndexPath(_ indexPath: IndexPath) {
+        let deleteAlert = UIAlertController.init(title: nil, message: "Are you sure you want to remove this photo?", preferredStyle: .alert)
+        let deleteAction = UIAlertAction.init(title: "Remove", style: .destructive) { [weak self] (action) in
+            self?.photos.remove(at: indexPath.row)
+        }
+        
+        deleteAlert.addAction(deleteAction)
+        deleteAlert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(deleteAlert, animated: true, completion: nil)
+    }
+    
+    func addImage() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = false
+        imagePicker.delegate = self
+        imagePicker.modalPresentationStyle = .fullScreen
+        
+        let actionSheet = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cameraAction = UIAlertAction.init(title: "Take a photo", style: .default) { (action) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                imagePicker.sourceType = .camera
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+        }
+        let libraryAction = UIAlertAction.init(title: "Choose photo from library", style: .default) { (action) in
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                imagePicker.sourceType = .photoLibrary
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+        }
+        
+        actionSheet.addAction(cameraAction)
+        actionSheet.addAction(libraryAction)
+        actionSheet.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(actionSheet, animated: true, completion: nil)
     }
     
 }
