@@ -48,12 +48,12 @@ class OceanAccessHomeViewController: UIViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destinationViewController: ReportManagedContextable
+        var destinationViewController: ManagedContextable
         
-        if let navigationController = segue.destination as? UINavigationController, let visibleViewController = navigationController.viewControllers.first as? ReportManagedContextable {
+        if let navigationController = segue.destination as? UINavigationController, let visibleViewController = navigationController.viewControllers.first as? ManagedContextable {
             destinationViewController = visibleViewController
             destinationViewController.managedObjectContext = persistentContainer.viewContext
-        } else if let destination = segue.destination as? ReportManagedContextable {
+        } else if let destination = segue.destination as? ManagedContextable {
             destinationViewController = destination
             destinationViewController.managedObjectContext = persistentContainer.viewContext
         }
@@ -63,7 +63,8 @@ class OceanAccessHomeViewController: UIViewController {
 
 }
 
-// MARK: - ReportManagedContextable
-protocol ReportManagedContextable {
+// MARK: - ManagedContextable
+// TODO: Move to its own file
+protocol ManagedContextable {
     var managedObjectContext: NSManagedObjectContext? { get set }
 }

@@ -9,38 +9,37 @@
 import UIKit
 import CoreData
 
-class ReportDetailsTableViewController: UITableViewController, ReportManagedContextable {
+class ReportDetailsTableViewController: UITableViewController, ManagedContextable {
 
-    @IBOutlet weak var locationTextField: UITextField!
-    @IBOutlet weak var crmcCodeTextField: UITextField!
-    @IBOutlet weak var reporterNameTextField: UITextField!
+    @IBOutlet private weak var locationTextField: UITextField!
+    @IBOutlet private weak var crmcCodeTextField: UITextField!
+    @IBOutlet private weak var reporterNameTextField: UITextField!
     
-    @IBOutlet weak var reportDateTimePicker: UIDatePicker!
+    @IBOutlet private weak var reportDateTimePicker: UIDatePicker!
     
-    @IBOutlet weak var peopleWalkersCountTextfield: UITextField!
-    @IBOutlet weak var peopleFishermenCountTextField: UITextField!
-    @IBOutlet weak var peopleSurfersCountTextField: UITextField!
-    @IBOutlet weak var peopleOtherCountTextField: UITextField!
+    @IBOutlet private weak var peopleWalkersCountTextfield: UITextField!
+    @IBOutlet private weak var peopleFishermenCountTextField: UITextField!
+    @IBOutlet private weak var peopleSurfersCountTextField: UITextField!
+    @IBOutlet private weak var peopleOtherCountTextField: UITextField!
     
-    @IBOutlet weak var approvalsCrmcROWSwitch: UISwitch!
-    @IBOutlet weak var approvalsCoaAdoptionSignSwitch: UISwitch!
-    @IBOutlet weak var approvalsObstructionToROWSwitch: UISwitch!
-    @IBOutlet weak var approvalsEncroachmentToPathwaySwitch: UISwitch!
-    @IBOutlet weak var approvalsEncroachmentToShorelineSwitch: UISwitch!
-    @IBOutlet weak var approvalsWaterAccessSwitch: UISwitch!
-    @IBOutlet weak var approvalsParkingSwitch: UISwitch!
-    @IBOutlet weak var approvalsVandalismSwitch: UISwitch!
-    @IBOutlet weak var approvalsDebrisSwitch: UISwitch!
+    @IBOutlet private weak var approvalsCrmcROWSwitch: UISwitch!
+    @IBOutlet private weak var approvalsCoaAdoptionSignSwitch: UISwitch!
+    @IBOutlet private weak var approvalsObstructionToROWSwitch: UISwitch!
+    @IBOutlet private weak var approvalsEncroachmentToPathwaySwitch: UISwitch!
+    @IBOutlet private weak var approvalsEncroachmentToShorelineSwitch: UISwitch!
+    @IBOutlet private weak var approvalsWaterAccessSwitch: UISwitch!
+    @IBOutlet private weak var approvalsParkingSwitch: UISwitch!
+    @IBOutlet private weak var approvalsVandalismSwitch: UISwitch!
+    @IBOutlet private weak var approvalsDebrisSwitch: UISwitch!
     
-    @IBOutlet weak var commentsTextView: UITextView!
+    @IBOutlet private weak var commentsTextView: UITextView!
+    @IBOutlet private weak var photosCollectionView: UICollectionView!
     
     private var photos: [UIImage] = [] {
         didSet {
             photosCollectionView.reloadData()
         }
     }
-    @IBOutlet weak var photosCollectionView: UICollectionView!
-    
     
     var managedObjectContext: NSManagedObjectContext? // ReportManagedContext
     var report: Report?
@@ -48,20 +47,26 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // If we can't save our report, no sense being here
+        guard let managedObjectContext = managedObjectContext else {
+            return
+        }
+        
+        
         photosCollectionView.register(UINib(nibName:"PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"Photo Cell")
 
-        
         // If we have an existing report on load then update our view to reflect this report for editing
         if let report = report {
             updateViewForReport(report)
         } else if let reporter = UserDefaults.standard.string(forKey: UserDefaults.Keys.DefaultReporter) {
             reporterNameTextField.text = reporter
+            report = Report(context: managedObjectContext)
         }
         
         setupCrmcCodePicker()
     }
     
-    func setupCrmcCodePicker() {
+    private func setupCrmcCodePicker() {
         let picker = UIPickerView()
         picker.delegate = self
         picker.dataSource = self
@@ -70,14 +75,13 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
     }
     
     
-    func createReport(with context: NSManagedObjectContext) -> Report? {
-        guard let reporter = reporterNameTextField.text, let location = locationTextField.text, let crmc = crmcCodeTextField.text else {
+    private func createReport(with context: NSManagedObjectContext) -> Report? {
+        guard let reporter = reporterNameTextField.text, let location = locationTextField.text, let crmc = crmcCodeTextField.text, let report = report else {
             print("Failed to create report") // FIXME: Let's add some reasonable error handling here
             return nil
         }
         
-        // If we have a report to edit, set it here, else generate a new report
-        let activeReport = report ?? Report(context: context)
+        let activeReport = report
         
         activeReport.dateTime = reportDateTimePicker.date
         activeReport.reporterName = reporter
@@ -108,7 +112,7 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
         return activeReport
     }
     
-    func updateViewForReport(_ report:Report) {
+    private func updateViewForReport(_ report:Report) {
         if let date = report.dateTime {
             reportDateTimePicker.setDate(date, animated: false)
             reporterNameTextField.text = report.reporterName
@@ -133,15 +137,13 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
             commentsTextView.text = report.comments
         }
     }
-    
-    
 
-    // MARK: - IBActions
-    @IBAction func cancelToOeanAccessHome(_ segue: UIStoryboardSegue) {
+    // MARK: IBActions
+    @IBAction private func cancelToOeanAccessHome(_ segue: UIStoryboardSegue) {
         close(true)
     }
     
-    @IBAction func saveReportDetails(_ segue: UIStoryboardSegue) {
+    @IBAction private func saveReportDetails(_ segue: UIStoryboardSegue) {
         if let managedObjectContext = managedObjectContext {
             
             // update report
@@ -158,8 +160,8 @@ class ReportDetailsTableViewController: UITableViewController, ReportManagedCont
         }
     }
     
-    // currently assumes modal presentation, might want to write UIViewController extension to determine if VC has been pushed or modally presented
-    func close(_ animated: Bool) {
+    // TODO: currently assumes modal presentation, might want to write UIViewController extension to determine if VC has been pushed or modally presented
+    private func close(_ animated: Bool) {
         if let nvc = navigationController {
             nvc.dismiss(animated: animated)
         } else {
@@ -182,6 +184,7 @@ extension ReportDetailsTableViewController {
     }
 }
 
+// MARK: UIImagePickerController Delegate
 extension ReportDetailsTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
@@ -195,6 +198,7 @@ extension ReportDetailsTableViewController: UIImagePickerControllerDelegate, UIN
     }
 }
 
+// MARK: Photos Collection View Delegation / Datasource
 extension ReportDetailsTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count + 1
@@ -225,7 +229,7 @@ extension ReportDetailsTableViewController: UICollectionViewDelegate, UICollecti
         
     }
     
-    func deleteImageAtIndexPath(_ indexPath: IndexPath) {
+    private func deleteImageAtIndexPath(_ indexPath: IndexPath) {
         let deleteAlert = UIAlertController.init(title: nil, message: "Are you sure you want to remove this photo?", preferredStyle: .alert)
         let deleteAction = UIAlertAction.init(title: "Remove", style: .destructive) { [weak self] (action) in
             self?.photos.remove(at: indexPath.row)
@@ -237,7 +241,7 @@ extension ReportDetailsTableViewController: UICollectionViewDelegate, UICollecti
         present(deleteAlert, animated: true, completion: nil)
     }
     
-    func addImage() {
+    private func addImage() {
         let imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = false
         imagePicker.delegate = self
@@ -266,6 +270,7 @@ extension ReportDetailsTableViewController: UICollectionViewDelegate, UICollecti
     
 }
 
+// MARK: UIPickerView Delegate / DataSource
 extension ReportDetailsTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2

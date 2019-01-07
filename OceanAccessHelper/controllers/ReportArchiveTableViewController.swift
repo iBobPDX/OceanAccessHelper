@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import MessageUI
 
-class ReportArchiveTableViewController: UITableViewController, ReportManagedContextable {
+class ReportArchiveTableViewController: UITableViewController, ManagedContextable {
     var managedObjectContext: NSManagedObjectContext?
     var selectedReport: Report?
     
@@ -95,7 +95,11 @@ extension ReportArchiveTableViewController {
 // MARK: - UITableViewDataSource
 extension ReportArchiveTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let reports = fetchedResultsController.fetchedObjects else { return 0 }
+        guard let reports = fetchedResultsController.fetchedObjects else {
+            return 0
+            
+        }
+        
         return reports.count
     }
     
