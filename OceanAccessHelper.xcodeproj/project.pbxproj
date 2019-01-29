@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C90A909621E3EAF800D9B6FC /* ReportPhotosDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A909521E3EAF800D9B6FC /* ReportPhotosDataSource.swift */; };
 		C927803621B32D3A008329CA /* UIImage+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927803521B32D3A008329CA /* UIImage+Assets.swift */; };
 		C927803821B3300C008329CA /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927803721B3300C008329CA /* UserDefaults+Keys.swift */; };
+		C9682D4D21E165560075A62E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9682D4C21E165560075A62E /* Photo.swift */; };
 		C97E49BD21CD6CE90090015C /* ApprovalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E49BC21CD6CE90090015C /* ApprovalTableViewCell.swift */; };
 		C97E49C621CD82AE0090015C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E49C421CD82AE0090015C /* PhotoCollectionViewCell.swift */; };
 		C97E49C721CD82AE0090015C /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97E49C521CD82AE0090015C /* PhotoCollectionViewCell.xib */; };
@@ -46,8 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C90A909521E3EAF800D9B6FC /* ReportPhotosDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPhotosDataSource.swift; sourceTree = "<group>"; };
 		C927803521B32D3A008329CA /* UIImage+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Assets.swift"; sourceTree = "<group>"; };
 		C927803721B3300C008329CA /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
+		C9682D4C21E165560075A62E /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		C97E49BC21CD6CE90090015C /* ApprovalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalTableViewCell.swift; sourceTree = "<group>"; };
 		C97E49C421CD82AE0090015C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		C97E49C521CD82AE0090015C /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				C9CD1C2821A1EDFC00203AA5 /* OceanAccessHomeViewController.swift */,
 				C9CD1BEF21A1CFF000203AA5 /* ReportArchiveTableViewController.swift */,
 				C9CD1C2421A1E9CE00203AA5 /* ReportDetailsTableViewController.swift */,
+				C90A909521E3EAF800D9B6FC /* ReportPhotosDataSource.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			children = (
 				C9CD1BF421A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld */,
 				C9CD1C1E21A1D7E300203AA5 /* Report.swift */,
+				C9682D4C21E165560075A62E /* Photo.swift */,
 				C9CD1C3621A616E200203AA5 /* AccessPoint.swift */,
 				C9D9D94221AF2B48002E1E07 /* EmailHTMLBody.swift */,
 			);
@@ -325,6 +331,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90A909621E3EAF800D9B6FC /* ReportPhotosDataSource.swift in Sources */,
+				C9682D4D21E165560075A62E /* Photo.swift in Sources */,
 				C927803821B3300C008329CA /* UserDefaults+Keys.swift in Sources */,
 				C9CD1BF621A1CFF000203AA5 /* OceanAccessHelper.xcdatamodeld in Sources */,
 				C9CD1BF021A1CFF000203AA5 /* ReportArchiveTableViewController.swift in Sources */,

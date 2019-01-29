@@ -35,14 +35,9 @@ class ReportDetailsTableViewController: UITableViewController, ManagedContextabl
     @IBOutlet private weak var commentsTextView: UITextView!
     @IBOutlet private weak var photosCollectionView: UICollectionView!
     
-    private var photos: [UIImage] = [] {
-        didSet {
-            photosCollectionView.reloadData()
-        }
-    }
-    
     var managedObjectContext: NSManagedObjectContext? // ReportManagedContext
     var report: Report?
+    var photosDataSource: ReportPhotosDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +56,12 @@ class ReportDetailsTableViewController: UITableViewController, ManagedContextabl
         } else if let reporter = UserDefaults.standard.string(forKey: UserDefaults.Keys.DefaultReporter) {
             reporterNameTextField.text = reporter
             report = Report(context: managedObjectContext)
+        }
+        
+        // We should have a report here one way or another, let's set up our datasource for photos
+        if let report = report {
+            photosDataSource = ReportPhotosDataSource(report: report, context: managedObjectContext)
+            photosDataSource?.delegate = self
         }
         
         setupCrmcCodePicker()
@@ -170,6 +171,17 @@ class ReportDetailsTableViewController: UITableViewController, ManagedContextabl
     }
 }
 
+// MARK: ReportPhotosDataSourceDelegate
+extension ReportDetailsTableViewController: ReportPhotosDataSourceDelegate {
+    func didAdd(photo: Photo) {
+        photosCollectionView.reloadData()
+    }
+    
+    func didRemovePhoto() {
+        photosCollectionView.reloadData()
+    }
+}
+
 // MARK: UITableViewDelegate
 extension ReportDetailsTableViewController {
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
@@ -188,9 +200,9 @@ extension ReportDetailsTableViewController {
 extension ReportDetailsTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            photos.append(image)
+            photosDataSource?.addImage(image)
             if picker.sourceType == .camera {
-                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil) // save image to library
+//                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil) // save image to library
             }
         }
         
@@ -201,27 +213,27 @@ extension ReportDetailsTableViewController: UIImagePickerControllerDelegate, UIN
 // MARK: Photos Collection View Delegation / Datasource
 extension ReportDetailsTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count + 1
+        let count = photosDataSource?.numberOfPhotos() ?? 0
+        return count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Photo Cell", for: indexPath)
-        if let cell = cell as? PhotoCollectionViewCell {
+        if let cell = cell as? PhotoCollectionViewCell, let photosDataSource = photosDataSource {
             cell.imageView.image = nil // reset cell for reuse
             cell.backgroundColor = nil // reset cell for reuse
             
-            if photos.count > indexPath.row {
-                cell.imageView.image = photos[indexPath.row]
-                cell.backgroundColor = .red
+            if photosDataSource.numberOfPhotos() > indexPath.row {
+                cell.imageView.image = photosDataSource.imageForItemAtIndexPath(indexPath)
             } else {
-                cell.backgroundColor = .blue
+                cell.backgroundColor = .blue // TODO: Set image to a call to action icon for taking photo
             }
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == photos.count {
+        if indexPath.row == photosDataSource?.numberOfPhotos() {
             addImage()
         } else {
             deleteImageAtIndexPath(indexPath)
@@ -232,7 +244,7 @@ extension ReportDetailsTableViewController: UICollectionViewDelegate, UICollecti
     private func deleteImageAtIndexPath(_ indexPath: IndexPath) {
         let deleteAlert = UIAlertController.init(title: nil, message: "Are you sure you want to remove this photo?", preferredStyle: .alert)
         let deleteAction = UIAlertAction.init(title: "Remove", style: .destructive) { [weak self] (action) in
-            self?.photos.remove(at: indexPath.row)
+            self?.photosDataSource?.remove(at: indexPath)
         }
         
         deleteAlert.addAction(deleteAction)
