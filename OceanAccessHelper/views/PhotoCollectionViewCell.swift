@@ -16,5 +16,8 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+}
 
+extension PhotoCollectionViewCell: NibLoadableView, ReusableView {
+    
 }

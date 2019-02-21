@@ -48,23 +48,32 @@ class OceanAccessHomeViewController: UIViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destinationViewController: ManagedContextable
+        let destinationViewController: UIViewController
         
-        if let navigationController = segue.destination as? UINavigationController, let visibleViewController = navigationController.viewControllers.first as? ManagedContextable {
+        if let navigationController = segue.destination as? UINavigationController, let visibleViewController = navigationController.viewControllers.first {
             destinationViewController = visibleViewController
-            destinationViewController.managedObjectContext = persistentContainer.viewContext
-        } else if let destination = segue.destination as? ManagedContextable {
-            destinationViewController = destination
-            destinationViewController.managedObjectContext = persistentContainer.viewContext
+        } else {
+            destinationViewController = segue.destination
+        }
+        
+        if destinationViewController is ManagedContextable {
+            var viewController = destinationViewController as! ManagedContextable
+            viewController.managedObjectContext = persistentContainer.viewContext
+        }
+        
+        if destinationViewController is ReportProtocol {
+            var viewController = destinationViewController as! ReportProtocol
+            viewController.report = Report(context: persistentContainer.viewContext)
         }
     }
- 
-    
-
 }
 
 // MARK: - ManagedContextable
 // TODO: Move to its own file
 protocol ManagedContextable {
     var managedObjectContext: NSManagedObjectContext? { get set }
+}
+
+protocol ReportProtocol {
+    var report: Report! { get set }
 }

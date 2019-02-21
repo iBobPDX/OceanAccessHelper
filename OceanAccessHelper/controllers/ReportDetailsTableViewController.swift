@@ -9,8 +9,8 @@
 import UIKit
 import CoreData
 
-class ReportDetailsTableViewController: UITableViewController, ManagedContextable {
-
+class ReportDetailsTableViewController: UITableViewController, ManagedContextable, ReportProtocol {
+    
     @IBOutlet private weak var locationTextField: UITextField!
     @IBOutlet private weak var crmcCodeTextField: UITextField!
     @IBOutlet private weak var reporterNameTextField: UITextField!
@@ -36,8 +36,9 @@ class ReportDetailsTableViewController: UITableViewController, ManagedContextabl
     @IBOutlet private weak var photosCollectionView: UICollectionView!
     
     var managedObjectContext: NSManagedObjectContext? // ReportManagedContext
-    var report: Report?
+    var report: Report!
     var photosDataSource: ReportPhotosDataSource?
+    var viewModel: DetailViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,24 +48,15 @@ class ReportDetailsTableViewController: UITableViewController, ManagedContextabl
             return
         }
         
+        photosCollectionView.register(PhotoCollectionViewCell.self)
         
-        photosCollectionView.register(UINib(nibName:"PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"Photo Cell")
-
-        // If we have an existing report on load then update our view to reflect this report for editing
-        if let report = report {
-            updateViewForReport(report)
-        } else if let reporter = UserDefaults.standard.string(forKey: UserDefaults.Keys.DefaultReporter) {
-            reporterNameTextField.text = reporter
-            report = Report(context: managedObjectContext)
-        }
+        viewModel = DetailViewModel(report: report, context: managedObjectContext)
         
-        // We should have a report here one way or another, let's set up our datasource for photos
-        if let report = report {
-            photosDataSource = ReportPhotosDataSource(report: report, context: managedObjectContext)
-            photosDataSource?.delegate = self
-        }
+        photosDataSource = ReportPhotosDataSource(report: report, context: managedObjectContext)
+        photosDataSource?.delegate = self
         
         setupCrmcCodePicker()
+        updateView()
     }
     
     private func setupCrmcCodePicker() {
@@ -78,7 +70,7 @@ class ReportDetailsTableViewController: UITableViewController, ManagedContextabl
     
     private func createReport(with context: NSManagedObjectContext) -> Report? {
         guard let reporter = reporterNameTextField.text, let location = locationTextField.text, let crmc = crmcCodeTextField.text, let report = report else {
-            print("Failed to create report") // FIXME: Let's add some reasonable error handling here
+            NSLog("Failed to create report") // TODO: Add some reasonable error handling here
             return nil
         }
         
@@ -113,30 +105,32 @@ class ReportDetailsTableViewController: UITableViewController, ManagedContextabl
         return activeReport
     }
     
-    private func updateViewForReport(_ report:Report) {
-        if let date = report.dateTime {
-            reportDateTimePicker.setDate(date, animated: false)
-            reporterNameTextField.text = report.reporterName
-            locationTextField.text = report.locationName
-            crmcCodeTextField.text = report.crmcCode
-            
-            peopleWalkersCountTextfield.text = String(report.peopleWalkersCount)
-            peopleFishermenCountTextField.text = String(report.peopleFishermenCount)
-            peopleSurfersCountTextField.text = String(report.peopleSurfersCount)
-            peopleOtherCountTextField.text = String(report.peopleOtherCount)
-            
-            approvalsCrmcROWSwitch.isOn = report.crmcRightOfWaySignApproved
-            approvalsCoaAdoptionSignSwitch.isOn = report.coaAdoptionSignApproved
-            approvalsObstructionToROWSwitch.isOn = report.rowObstructionApproved
-            approvalsEncroachmentToPathwaySwitch.isOn = report.rowPathwayEncroachmentApproved
-            approvalsEncroachmentToShorelineSwitch.isOn = report.rowShorelineEncroachmentApproved
-            approvalsWaterAccessSwitch.isOn = report.pedestrianAccessApproved
-            approvalsParkingSwitch.isOn = report.parkingAccessApproved
-            approvalsVandalismSwitch.isOn = report.freeFromVandalismApproved
-            approvalsDebrisSwitch.isOn = report.freeFromMarineDebrisAndLitterApproved
-            
-            commentsTextView.text = report.comments
+    private func updateView() {
+        guard let viewModel = viewModel else {
+            return
         }
+        
+        reportDateTimePicker.setDate(viewModel.dateTime, animated: false)
+        reporterNameTextField.text = viewModel.reporterName
+        locationTextField.text = viewModel.locationName
+        crmcCodeTextField.text = viewModel.crmcCode
+        
+        peopleWalkersCountTextfield.text = viewModel.walkersCount
+        peopleFishermenCountTextField.text = viewModel.fishermenCount
+        peopleSurfersCountTextField.text = viewModel.surfersCount
+        peopleOtherCountTextField.text = viewModel.otherCount
+        
+        approvalsCrmcROWSwitch.isOn = viewModel.crmcRightOfWaySignApproved
+        approvalsCoaAdoptionSignSwitch.isOn = viewModel.coaAdoptionSignApproved
+        approvalsObstructionToROWSwitch.isOn = viewModel.rowObstructionApproved
+        approvalsEncroachmentToPathwaySwitch.isOn = viewModel.rowPathwayEncroachmentApproved
+        approvalsEncroachmentToShorelineSwitch.isOn = viewModel.rowShorelineEncroachmentApproved
+        approvalsWaterAccessSwitch.isOn = viewModel.pedestrianAccessApproved
+        approvalsParkingSwitch.isOn = viewModel.parkingAccessApproved
+        approvalsVandalismSwitch.isOn = viewModel.freeFromVandalismApproved
+        approvalsDebrisSwitch.isOn = viewModel.freeFromMarineDebrisAndLitterApproved
+        
+        commentsTextView.text = viewModel.comments
     }
 
     // MARK: IBActions
@@ -153,8 +147,8 @@ class ReportDetailsTableViewController: UITableViewController, ManagedContextabl
             // attempt to save context
             do {
                 try managedObjectContext.save()
-            } catch {
-                print("Failed saving")
+            } catch let error {
+                NSLog(error.localizedDescription) // TODO: Handle error
             }
             
             close(true)
@@ -218,8 +212,8 @@ extension ReportDetailsTableViewController: UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Photo Cell", for: indexPath)
-        if let cell = cell as? PhotoCollectionViewCell, let photosDataSource = photosDataSource {
+        let cell: PhotoCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
+        if let photosDataSource = photosDataSource {
             cell.imageView.image = nil // reset cell for reuse
             cell.backgroundColor = nil // reset cell for reuse
             
