@@ -63,16 +63,15 @@ class ReportArchiveTableViewController: UITableViewController, ManagedContextabl
     
     func presentMailControllerForReport(_ report: Report, completion: (() -> Void)? = nil) {
         guard MFMailComposeViewController.canSendMail() else {
-            // FIXME: Notify user that they need to configure mail
+            let alert = UIAlertController(title: "Configure Email", message: "You must have an email address configured in your device's mail application in order to export reports.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             return
         }
         if let location = report.locationName {
             let mailController = MFMailComposeViewController.init()
             mailController.mailComposeDelegate = self
             mailController.setSubject("Access Report for \(location)")
-            mailController.setToRecipients(["corlett.robert@gmail.com"])
-//            mailController.setMessageBody(EmailHTMLBody.htmlTableForReport(report), isHTML: true)
-            
             
             // 1. Create a print formatter
             let html = EmailHTMLBody.htmlTableForReport(report)
