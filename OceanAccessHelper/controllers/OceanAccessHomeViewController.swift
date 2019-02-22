@@ -71,7 +71,7 @@ class OceanAccessHomeViewController: UIViewController {
 // MARK: - ManagedContextable
 // TODO: Move to its own file
 protocol ManagedContextable {
-    var managedObjectContext: NSManagedObjectContext? { get set }
+    var managedObjectContext: NSManagedObjectContext! { get set }
 }
 
 protocol ReportProtocol {

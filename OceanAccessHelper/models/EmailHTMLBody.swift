@@ -15,6 +15,9 @@ class EmailHTMLBody {
         """
         <html>
             <style type="text/css">
+                .ti {text-align: center;}
+                .tg {width: 100%;}
+                .tg {white-space: pre-line;}
                 .tg  {border-collapse:collapse;border-spacing:0;}
                 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
                 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
@@ -27,6 +30,10 @@ class EmailHTMLBody {
                 <meta http-equiv="Content-Type" content="text/html charset=UTF-8">
             </head>
             <body>
+                <header class="ti">
+                    <h1>CRMC</h1>
+                    <h3>Adopt-an-Access Program</h3>
+                </header>
                 <table class="tg" style="border-collapse: collapse;border-spacing: 0;">
                     <tr>
                         <th class="tg-llyw" style="font-family: Arial, sans-serif;font-size: 14px;font-weight: normal;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">Location</th>
@@ -65,49 +72,49 @@ class EmailHTMLBody {
                         <td class="tg-fymr" colspan="4" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;font-weight: bold;text-align: left;vertical-align: top;">Access Parameters</td>
                     </tr>
                     <tr>
-                        <td class="tg-llyw" colspan="2" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">CRMC Right-of-Way</td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;"></td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.crmcRightOfWaySignApproved ? "YES" : "NO")</td>
+                        <td class="tg-llyw" colspan="3" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">CRMC Right-of-Way</td>
+        
+                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.crmcRightOfWaySignApproved ? "Approved" : "Issue Noted")</td>
                     </tr>
                     <tr>
-                        <td class="tg-llyw" colspan="2" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">COA Adoption Sign</td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;"></td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.coaAdoptionSignApproved ? "YES" : "NO")</td>
+                        <td class="tg-llyw" colspan="3" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">COA Adoption Sign</td>
+        
+                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.coaAdoptionSignApproved ? "Approved" : "Issue Noted")</td>
                     </tr>
                     <tr>
-                        <td class="tg-llyw" colspan="2" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">No Obstruction to ROW</td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;"></td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.rowObstructionApproved ? "YES" : "NO")</td>
+                        <td class="tg-llyw" colspan="3" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">No Obstruction to ROW</td>
+        
+                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.rowObstructionApproved ? "Approved" : "Issue Noted")</td>
                     </tr>
                     <tr>
-                        <td class="tg-llyw" colspan="2" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">No Encroachment to Pathway</td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;"></td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.rowPathwayEncroachmentApproved ? "YES" : "NO")</td>
+                        <td class="tg-llyw" colspan="3" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">No Encroachment to Pathway</td>
+        
+                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.rowPathwayEncroachmentApproved ? "Approved" : "Issue Noted")</td>
                     </tr>
                     <tr>
-                        <td class="tg-llyw" colspan="2" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">No Encroachment to Shoreline</td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;"></td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.rowShorelineEncroachmentApproved ? "YES" : "NO")</td>
+                        <td class="tg-llyw" colspan="3" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">No Encroachment to Shoreline</td>
+        
+                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.rowShorelineEncroachmentApproved ? "Approved" : "Issue Noted")</td>
                     </tr>
                     <tr>
-                        <td class="tg-llyw" colspan="2" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">Able to Access Water</td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;"></td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.pedestrianAccessApproved ? "YES" : "NO")</td>
+                        <td class="tg-llyw" colspan="3" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">Able to Access Water</td>
+        
+                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.pedestrianAccessApproved ? "Approved" : "Issue Noted")</td>
                     </tr>
                     <tr>
-                        <td class="tg-llyw" colspan="2" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">Parking Available</td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;"></td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.parkingAccessApproved ? "YES" : "NO")</td>
+                        <td class="tg-llyw" colspan="3" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">Parking Available</td>
+        
+                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.parkingAccessApproved ? "Approved" : "Issue Noted")</td>
                     </tr>
                     <tr>
-                        <td class="tg-llyw" colspan="2" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">Free from Vandalism</td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;"></td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.freeFromVandalismApproved ? "YES" : "NO")</td>
+                        <td class="tg-llyw" colspan="3" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">Free from Vandalism</td>
+        
+                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.freeFromVandalismApproved ? "Approved" : "Issue Noted")</td>
                     </tr>
                     <tr>
-                        <td class="tg-llyw" colspan="2" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">Free from Marine Debris and Litter</td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;"></td>
-                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.freeFromMarineDebrisAndLitterApproved ? "YES" : "NO")</td>
+                        <td class="tg-llyw" colspan="3" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;background-color: #efefef;text-align: left;vertical-align: top;">Free from Marine Debris and Litter</td>
+        
+                        <td class="tg-0pky" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;">\(report.freeFromMarineDebrisAndLitterApproved ? "Approved" : "Issue Noted")</td>
                     </tr>
                     <tr>
                         <td class="tg-0pky" colspan="4" style="font-family: Arial, sans-serif;font-size: 14px;padding: 10px 5px;border-style: solid;border-width: 1px;overflow: hidden;word-break: normal;border-color: inherit;text-align: left;vertical-align: top;"></td>

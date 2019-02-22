@@ -43,42 +43,22 @@ class ReportPhotosDataSource  {
         
         let uuid = UUID()
         photo.uuid = uuid
+        photo.imageData = image.jpegData(compressionQuality: 1.0)
         
-        let fileManager = FileManager.default
-        let photosDirectory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("photos") // TODO: Handle error
-        
-        if let directory = photosDirectory?.relativePath, !fileManager.fileExists(atPath: directory) {
-            do {
-                try fileManager.createDirectory(atPath: directory, withIntermediateDirectories: true, attributes: nil)
-            } catch let error {
-                NSLog(error.localizedDescription)
-            }
-        }
-        
-        if let path = photosDirectory?.appendingPathComponent(uuid.uuidString) {
-            let data = image.jpegData(compressionQuality: 1.0)
-            try? data?.write(to: path) // TODO: Handle error
-            
-            photo.filePath = path.relativePath
-            photos.append(photo)
-            report.addToPhotos(photo)
-            delegate?.didAdd(photo:photo)
-        }
+        photos.append(photo)
+        report.addToPhotos(photo)
+        delegate?.didAdd(photo:photo)
     }
     
     func remove(at indexPath: IndexPath) {
         let photo = photos[indexPath.row]
-        if let path = photo.filePath {
-            try? FileManager.default.removeItem(atPath: path) // TODO: Handle error
-        }
-        
         managedObjectContext.delete(photo)
         photos.remove(at: indexPath.row)
         delegate?.didRemovePhoto()
     }
     
     func imageForItemAtIndexPath(_ indexPath: IndexPath) -> UIImage? {
-        guard let path = photos[indexPath.row].filePath, let data = FileManager.default.contents(atPath: path) else {
+        guard let data = photos[indexPath.row].imageData else {
             return nil
         }
         

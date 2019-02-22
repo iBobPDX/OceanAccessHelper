@@ -11,7 +11,7 @@ import CoreData
 import MessageUI
 
 class ReportArchiveTableViewController: UITableViewController, ManagedContextable {
-    var managedObjectContext: NSManagedObjectContext?
+    var managedObjectContext: NSManagedObjectContext!
     var selectedReport: Report?
     
     override func viewDidLoad() {
@@ -40,15 +40,12 @@ class ReportArchiveTableViewController: UITableViewController, ManagedContextabl
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            managedObjectContext?.delete(fetchedResultsController.object(at: indexPath))
+            managedObjectContext.delete(fetchedResultsController.object(at: indexPath))
+            try? managedObjectContext.save()
         }
     }
     
     fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Report> = {
-        guard let managedObjectContext = managedObjectContext else {
-            fatalError("Invalid managed object context")
-        }
-        
         // Create Fetch Request
         let fetchRequest: NSFetchRequest<Report> = Report.fetchRequest()
         
@@ -74,7 +71,41 @@ class ReportArchiveTableViewController: UITableViewController, ManagedContextabl
             mailController.mailComposeDelegate = self
             mailController.setSubject("Access Report for \(location)")
             mailController.setToRecipients(["corlett.robert@gmail.com"])
-            mailController.setMessageBody(EmailHTMLBody.htmlTableForReport(report), isHTML: true)
+//            mailController.setMessageBody(EmailHTMLBody.htmlTableForReport(report), isHTML: true)
+            
+            
+            // 1. Create a print formatter
+            let html = EmailHTMLBody.htmlTableForReport(report)
+            let fmt = UIMarkupTextPrintFormatter(markupText: html)
+            
+            // 2. Assign print formatter to UIPrintPageRenderer
+            let render = UIPrintPageRenderer()
+            render.addPrintFormatter(fmt, startingAtPageAt: 0)
+            
+            // 3. Assign paperRect and printableRect
+            let page = CGRect(x: 0, y: 0, width: 595.2, height: 841.8) // A4, 72 dpi
+            render.setValue(page, forKey: "paperRect")
+            render.setValue(page, forKey: "printableRect")
+            
+            // 4. Create PDF context and draw
+            let pdfData = NSMutableData()
+            UIGraphicsBeginPDFContextToData(pdfData, .zero, nil)
+            
+            for i in 0..<render.numberOfPages {
+                UIGraphicsBeginPDFPage();
+                render.drawPage(at: i, in: UIGraphicsGetPDFContextBounds())
+            }
+            
+            UIGraphicsEndPDFContext();
+            
+            // 5. Save PDF file
+            mailController.addAttachmentData(pdfData as Data, mimeType: "application/pdf", fileName: "report.pdf")
+            
+            for (i,photo) in (report.photos ?? []).enumerated() {
+                if let photo = photo as? Photo, let data = photo.imageData {
+                    mailController.addAttachmentData(data, mimeType: "image/jpeg", fileName: "\(report.locationName ?? "")-\(i+1).jpg")
+                }
+            }   
             
             self.present(mailController, animated: true, completion: completion)
         }

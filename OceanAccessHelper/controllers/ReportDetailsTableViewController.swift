@@ -35,18 +35,13 @@ class ReportDetailsTableViewController: UITableViewController, ManagedContextabl
     @IBOutlet private weak var commentsTextView: UITextView!
     @IBOutlet private weak var photosCollectionView: UICollectionView!
     
-    var managedObjectContext: NSManagedObjectContext? // ReportManagedContext
+    var managedObjectContext: NSManagedObjectContext!
     var report: Report!
     var photosDataSource: ReportPhotosDataSource?
     var viewModel: DetailViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // If we can't save our report, no sense being here
-        guard let managedObjectContext = managedObjectContext else {
-            return
-        }
         
         photosCollectionView.register(PhotoCollectionViewCell.self)
         
@@ -220,7 +215,7 @@ extension ReportDetailsTableViewController: UICollectionViewDelegate, UICollecti
             if photosDataSource.numberOfPhotos() > indexPath.row {
                 cell.imageView.image = photosDataSource.imageForItemAtIndexPath(indexPath)
             } else {
-                cell.backgroundColor = .blue // TODO: Set image to a call to action icon for taking photo
+                cell.imageView.image = UIImage(named: Assets.CameraIcon)
             }
         }
         return cell

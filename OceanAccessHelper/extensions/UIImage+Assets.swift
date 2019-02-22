@@ -14,4 +14,5 @@ extension UIImage {
 
 enum Assets {
     static let OceanBackground = "coa-background"
+    static let CameraIcon = "add-icon"
 }
