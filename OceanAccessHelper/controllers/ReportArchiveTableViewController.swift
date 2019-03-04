@@ -72,7 +72,7 @@ class ReportArchiveTableViewController: UITableViewController, ManagedContextabl
             let mailController = MFMailComposeViewController.init()
             mailController.mailComposeDelegate = self
             mailController.setSubject("Access Report for \(location)")
-            mailController.setMessageBody("Sent with the unofficial COA Adopt-an-Access iOS App (Beta)", isHTML: false)
+            mailController.setMessageBody("Sent with the unofficial <a href=\"https://testflight.apple.com/join/ODW0zFwK\">COA Adopt-an-Access iOS App</a> (Beta).", isHTML: true)
             
             // 1. Create a print formatter
             let html = EmailHTMLBody.htmlTableForReport(report)
